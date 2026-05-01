@@ -1,8 +1,9 @@
-import { mkdir } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { LANGUAGES } from '../src/types';
 
 const REPO_URL = 'https://raw.githubusercontent.com/mhchem/hpstatements/master/clp';
+const INDENT = '  ';
 
 type Statements = Record< string, {
   code: string;
@@ -49,17 +50,67 @@ async function fetchStatements () : Promise< Statements > {
   return statements;
 }
 
-async function saveStatements ( statements: Statements ) : Promise< void > {
+function tsObjectLiteral ( value: Statements[ string ] ) : string {
+  const format = ( val: any, level: number ) : string => {
+    if ( val === null ) return 'null';
+    if ( typeof val === 'string' ) return `'${ val.replace( /'/g, '\'' ) }'`;
+    if ( typeof val === 'number' || typeof val === 'boolean' ) return String( val );
+
+    if ( Array.isArray( val ) ) {
+      if ( val.length === 0 ) return '[]';
+      return `[\n${ val.map( v => INDENT.repeat( level + 1 ) + format( v, level + 1 ) ).join( ',\n' ) }\n${
+        INDENT.repeat( level )
+      }]`;
+    }
+
+    if ( typeof val === 'object' ) {
+      const entries = Object.entries( val );
+      if ( entries.length === 0 ) return '{}';
+
+      return `{\n${ entries.map( ( [ k, v ] ) => {
+        const key = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test( k ) ? k : `'${ k.replace( /'/g, '\'' ) }'`;
+        return `${ INDENT.repeat( level + 1 ) }${ key }: ${ format( v, level + 1 ) }`;
+      } ).join( ',\n' ) }\n${ INDENT.repeat( level ) }}`;
+    }
+
+    return 'undefined';
+  };
+
+  return format( value, 0 );
+}
+
+async function updateStatement ( filePath: string, code: string, data: Statements[ string ] ) : Promise< string > {
+  const content = `import { Statement } from '../../src/types.js';\n\n` +
+    `export default ( ${ tsObjectLiteral( data ) } ) as const satisfies Statement;\n`;
+
+  await writeFile( filePath, content, 'utf8' );
+  return code;
+}
+
+async function processStatements ( statements: Statements ) : Promise< void > {
   const dataDir = join( process.cwd(), 'data' );
   await mkdir( dataDir, { recursive: true } );
 
-  void [ statements ];
+  const codes: string[] = [];
+
+  for ( const [ code, data ] of Object.entries( statements ) ) {
+    let subDir = code.startsWith( 'H' ) ? 'h'
+      : code.startsWith( 'P' ) ? 'p'
+      : code.startsWith( 'EUH' ) ? 'euh'
+      : 'other';
+
+    const dir = join( dataDir, subDir );
+    const filePath = join( dir, `${ code.replace( /\+/g, '_' ) }.ts` );
+
+    await mkdir( dir, { recursive: true } );
+    codes.push( await updateStatement( filePath, code, data ) );
+  }
 }
 
 ( async () => {
   try {
     const statements = await fetchStatements();
-    saveStatements( statements );
+    processStatements( statements );
   } catch ( err ) {
     console.error( err );
   }
