@@ -1,5 +1,5 @@
 import type { EUHCode, HCode, PCode } from '../data';
-import type { HazardStatements } from './types';
+import type { Context, HazardStatements } from './types';
 
 type BucketMap = {
   hazard: HCode;
@@ -18,5 +18,20 @@ export class HazardManager {
   private bucket < K extends keyof BucketMap > ( key: K ) : NonNullable< HazardStatements[ K ] > {
     this.assertMutable();
     return this.map[ key ] ??= [];
+  }
+
+  public H ( code: HCode, context?: Context ) : this {
+    this.bucket( 'hazard' ).push( { code, context } );
+    return this;
+  }
+
+  public P ( code: PCode, context?: Context ) : this {
+    this.bucket( 'precautionary' ).push( { code, context } );
+    return this;
+  }
+
+  public EUH ( code: EUHCode, context?: Context ) : this {
+    this.bucket( 'eu' ).push( { code, context } );
+    return this;
   }
 }
