@@ -5,7 +5,7 @@ export default ( {
   translations: {
     bg: 'Да се избягва нагряване в затворено пространство или понижаване на съдържанието на десенсибилизиращия агент.',
     cs: 'Zamezte zahřívání v uzavřeném obalu nebo snížení objemu znecitlivujícího prostředku.',
-    da: 'Undgå opvarmning under indeslutning eller reduktion af det desensibiliserende middel.\'',
+    da: 'Undgå opvarmning under indeslutning eller reduktion af det desensibiliserende middel.\"',
     de: 'Erhitzen unter Einschluss und Reduzierung des Desensibilisierungsmittels vermeiden.',
     el: 'Να αποφεύγεται η θέρμανση σε περιορισμένο χώρο και η μείωση του παράγοντα απευαισθητοποίησης.',
     en: 'Avoid heating under confinement or reduction of the desensitising agent.',
