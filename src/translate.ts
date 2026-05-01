@@ -30,4 +30,10 @@ export class Translate {
     const s = await this.load( code );
     return s?.translations[ lang ] ?? s?.translations[ fallback ];
   }
+
+  public static async allOf < C extends StatementCode > (
+    code: C
+  ) : Promise< StatementConfig[ 'translations' ] > {
+    return ( await this.load( code ) )?.translations ?? {};
+  }
 }
