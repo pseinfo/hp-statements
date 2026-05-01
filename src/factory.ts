@@ -7,7 +7,7 @@ type BucketMap = {
   eu: EUHCode;
 };
 
-export class StatementBuilder {
+export class Factory {
   private map: HazardStatements = {};
   private frozen: boolean = false;
 
@@ -53,4 +53,4 @@ export class StatementBuilder {
   }
 }
 
-export const HP = () => new StatementBuilder();
+export const HP = () => new Factory();
