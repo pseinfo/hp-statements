@@ -20,6 +20,8 @@ interface RawStatement {
 // --- FETCH ----
 
 async function fetchLanguage ( lang: LangCode ) : Promise< RawStatement[] > {
+  console.log( `... for "${ lang.toUpperCase() }" ...` );
+
   const res = await fetch( `${ REPO_URL }/hpstatements-${ lang }-latest.json` );
   if ( ! res.ok ) return [];
 
@@ -32,6 +34,8 @@ async function fetchLanguage ( lang: LangCode ) : Promise< RawStatement[] > {
 }
 
 async function fetchStatements () : Promise< StatementMap > {
+  console.log( `Fetching statements ...` );
+
   const map: StatementMap = {};
 
   for ( const lang of LangCode ) {
@@ -55,6 +59,8 @@ function statement2Str ( s: Statement ) : string {
 }
 
 async function processStatements ( map: StatementMap ) : Promise< void > {
+  console.log( `Processing statements ...` );
+
   for ( const [ prefix, list ] of Object.entries( map ) ) {
     const dir = join( process.cwd(), 'data', prefix );
     await mkdir( dir, { recursive: true } );
@@ -93,7 +99,9 @@ function codes2Arr ( codes: string[], maxLength = 100 ) : string {
   return `[\n${ lines.join( ',\n' ) }\n]`;
 }
 
-async function generateCodes( map: StatementMap ) : Promise< void > {
+async function generateCodes ( map: StatementMap ) : Promise< void > {
+  console.log( `Saving fetched codes to src/codes.ts ...` );
+
   const filePath = join( process.cwd(), 'src/codes.ts' );
   const prefixes = [];
   let out = '';
