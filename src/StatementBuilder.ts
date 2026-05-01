@@ -7,12 +7,12 @@ type BucketMap = {
   eu: EUHCode;
 };
 
-export class HazardManager {
+export class StatementBuilder {
   private map: HazardStatements = {};
   private frozen: boolean = false;
 
   private assertMutable () : void | never {
-    if ( this.frozen ) throw new Error( `HazardManager is frozen (build() already called).` );
+    if ( this.frozen ) throw new Error( `Hazardous statements are frozen ("build()" already called).` );
   }
 
   private bucket < K extends keyof BucketMap > ( key: K ) : NonNullable< HazardStatements[ K ] > {
@@ -24,14 +24,12 @@ export class HazardManager {
     const sort = < T extends { code: string } > ( arr: T[] ) =>
       [ ...arr ].sort( ( a, b ) => a.code.localeCompare( b.code ) );
 
-    const result: HazardStatements = {
-      hazard: sort( this.map.hazard ?? [] ),
-      precautionary: sort( this.map.precautionary ?? [] ),
-      eu: sort( this.map.eu ?? [] )
-    };
-
-    this.map = Object.freeze( result );
     this.frozen = true;
+    this.map = Object.freeze( {
+      ...( this.map.hazard?.length && { hazard: sort( this.map.hazard ) } ),
+      ...( this.map.precautionary?.length && { precautionary: sort( this.map.precautionary ) } ),
+      ...( this.map.eu?.length && { eu: sort( this.map.eu ) } )
+    } );
   }
 
   public H ( code: HCode, context?: Context ) : this {
@@ -54,3 +52,5 @@ export class HazardManager {
     return this.map;
   }
 }
+
+export const HP = () => new StatementBuilder();
