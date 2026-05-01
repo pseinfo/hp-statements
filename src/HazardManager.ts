@@ -11,3 +11,5 @@ export class HazardManager {
     return this.map;
   }
 }
+
+export const HP = () => new HazardManager();
