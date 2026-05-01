@@ -4,11 +4,12 @@ export const LangCode = [
   'hu', 'it', 'lt', 'lv', 'mt', 'nl', 'pl', 'pt', 'ro', 'sk', 'sl', 'sv'
 ] as const;
 
+export type StatementPrefix = ( typeof StatementPrefix )[ number ];
+export const StatementPrefix = [ 'H', 'P', 'EUH' ] as const;
+
 export type Statement = {
   code: string;
   translations: { [ K in LangCode ]?: string };
-  notes?: string;
-  deprecated?: boolean;
 };
 
 export type HazardStatements = {
