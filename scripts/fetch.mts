@@ -14,7 +14,7 @@ interface RawStatement {
 }
 
 async function fetchLanguage ( lang: string ) : Promise< RawStatement[] > {
-  console.log( `... for ${ lang } ...` );
+  console.log( `... for "${ lang }" ...` );
   const response = await fetch( `${ REPO_URL }/hpstatements-${ lang }-latest.json` );
 
   if ( ! response.ok ) {
@@ -50,7 +50,7 @@ async function fetchStatements () : Promise< StatementCollection > {
 function tsObjectLiteral ( value: Statement ) : string {
   const format = ( val: any, level: number ) : string => {
     if ( val === null ) return 'null';
-    if ( typeof val === 'string' ) return `'${ val.replace( /'/g, '\'' ) }'`;
+    if ( typeof val === 'string' ) return `'${ val.replace( /'/g, "\\'" ) }'`;
     if ( typeof val === 'number' || typeof val === 'boolean' ) return String( val );
 
     if ( Array.isArray( val ) ) {
@@ -65,7 +65,7 @@ function tsObjectLiteral ( value: Statement ) : string {
       if ( entries.length === 0 ) return '{}';
 
       return `{\n${ entries.map( ( [ k, v ] ) => {
-        const key = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test( k ) ? k : `'${ k.replace( /'/g, '\'' ) }'`;
+        const key = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test( k ) ? k : `'${ k.replace( /'/g, "\\'" ) }'`;
         return `${ INDENT.repeat( level + 1 ) }${ key }: ${ format( v, level + 1 ) }`;
       } ).join( ',\n' ) }\n${ INDENT.repeat( level ) }}`;
     }
