@@ -2,6 +2,12 @@ import { LANGUAGES } from '../src/types';
 
 const REPO_URL = 'https://raw.githubusercontent.com/mhchem/hpstatements/master/clp';
 
+type Statements = Record< string, {
+  code: string;
+  translations: { [ K in LANGUAGES ]?: string };
+  notes?: string;
+} >;
+
 interface RawStatement {
   code: string;
   phrase: string;
@@ -26,4 +32,17 @@ async function fetchLanguage ( lang: string ) : Promise< RawStatement[] > {
 
     return { code, phrase: phrase as string };
   } );
+}
+
+async function fetchStatements () : Promise< Statements > {
+  const statements: Statements = {};
+
+  for ( const lang of LANGUAGES ) {
+    for ( const s of await fetchLanguage( lang ) ) {
+      statements[ s.code ] ??= { code: s.code, translations: {}, notes: s.notes };
+      statements[ s.code ].translations[ lang ] = s.phrase;
+    }
+  }
+
+  return statements;
 }
