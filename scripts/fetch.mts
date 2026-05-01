@@ -2,15 +2,15 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import stringify from 'json-stable-stringify';
 
-import type { Statement } from '../src/types';
-import { LangCode, StatementPrefix } from '../src/types';
+import type { StatementConfig } from '../src/types';
+import { LangCode, StatementType } from '../src/types';
 
 const REPO_URL = 'https://raw.githubusercontent.com/mhchem/hpstatements/master/clp';
 
 // ---- TYPEDEF ----
 
-type StatementList = Record< string, Statement >;
-type StatementMap = { [ P in StatementPrefix ]?: StatementList };
+type StatementList = Record< string, StatementConfig >;
+type StatementMap = { [ P in StatementType ]?: StatementList };
 
 interface RawStatement {
   code: string;
@@ -40,7 +40,7 @@ async function fetchStatements () : Promise< StatementMap > {
 
   for ( const lang of LangCode ) {
     for ( const { code, phrase } of await fetchLanguage( lang ) ) {
-      const prefix = StatementPrefix.find( p => code.startsWith( p ) );
+      const prefix = StatementType.find( p => code.startsWith( p ) );
       if ( ! prefix ) continue;
 
       ( ( map[ prefix ] ??= {} )[ code ] ??= { code, translations: {} } ).translations[ lang ] = phrase;
@@ -52,7 +52,7 @@ async function fetchStatements () : Promise< StatementMap > {
 
 // ---- STATEMENTS ----
 
-function statement2Str ( s: Statement ) : string {
+function statement2Str ( s: StatementConfig ) : string {
   return ( stringify( s, { space: 2 } ) ?? '{}' )
     .replace( /\u00A0/g, ' ' ).replace( /[\u200B-\u200D\uFEFF]/g, '' )
     .replace( /\r\n/g, '\n' ).trim()
@@ -71,8 +71,8 @@ async function processStatements ( map: StatementMap ) : Promise< void > {
       const file = join( dir, `${ code.replace( /\+/g, '_' ) }.ts` );
       let out = '';
 
-      out += `import type { Statement } from '../../src/types';\n\n`;
-      out += `export default ( ${ statement2Str( s ) } ) as const satisfies Statement;\n`;
+      out += `import type { StatementConfig } from '../../src/types';\n\n`;
+      out += `export default ( ${ statement2Str( s ) } ) as const satisfies StatementConfig;\n`;
 
       await writeFile( file, out, 'utf8' );
     }
