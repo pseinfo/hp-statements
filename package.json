@@ -1,0 +1,35 @@
+{
+  "name": "@pseinfo/hp-statements",
+  "description": "GHS hazard and precautionary statements",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Paul Köhler",
+    "email": "webmaster@komed3.de",
+    "url": "https://komed3.de"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pseinfo/hp-statements.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pseinfo/hp-statements/issues"
+  },
+  "keywords": [
+    "hp-statements",
+    "hazard-statements",
+    "precautionary-statements",
+    "pseinfo"
+  ],
+  "files": [
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "scripts": {
+    "lint": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
