@@ -1,15 +1,11 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { LANGUAGES } from '../src/types';
+import { LangCode, Statement } from '../src/types';
 
 const REPO_URL = 'https://raw.githubusercontent.com/mhchem/hpstatements/master/clp';
 const INDENT = '  ';
 
-type Statements = Record< string, {
-  code: string;
-  translations: { [ K in LANGUAGES ]?: string };
-  notes?: string;
-} >;
+type StatementCollection = Record< string, Statement >;
 
 interface RawStatement {
   code: string;
@@ -37,11 +33,11 @@ async function fetchLanguage ( lang: string ) : Promise< RawStatement[] > {
   } );
 }
 
-async function fetchStatements () : Promise< Statements > {
+async function fetchStatements () : Promise< StatementCollection > {
   console.log( `Fetching statements ...` );
-  const statements: Statements = {};
+  const statements: StatementCollection = {};
 
-  for ( const lang of LANGUAGES ) {
+  for ( const lang of LangCode ) {
     for ( const s of await fetchLanguage( lang ) ) {
       statements[ s.code ] ??= { code: s.code, translations: {}, notes: s.notes };
       statements[ s.code ].translations[ lang ] = s.phrase;
@@ -51,7 +47,7 @@ async function fetchStatements () : Promise< Statements > {
   return statements;
 }
 
-function tsObjectLiteral ( value: Statements[ string ] ) : string {
+function tsObjectLiteral ( value: Statement ) : string {
   const format = ( val: any, level: number ) : string => {
     if ( val === null ) return 'null';
     if ( typeof val === 'string' ) return `'${ val.replace( /'/g, '\'' ) }'`;
@@ -80,8 +76,8 @@ function tsObjectLiteral ( value: Statements[ string ] ) : string {
   return format( value, 0 );
 }
 
-async function saveStatementFile ( filePath: string, code: string, data: Statements[ string ] ) : Promise< string > {
-  const content = `import { Statement } from '../../src/types.js';\n\n` +
+async function saveStatementFile ( filePath: string, code: string, data: Statement ) : Promise< string > {
+  const content = `import { Statement } from '../../src/types';\n\n` +
     `export default ( ${ tsObjectLiteral( data ) } ) as const satisfies Statement;\n`;
 
   await writeFile( filePath, content, 'utf8' );
@@ -104,7 +100,7 @@ async function saveCodes ( codes: string[] ) : Promise< void > {
   await writeFile( filePath, content, 'utf8' );
 }
 
-async function processStatements ( statements: Statements ) : Promise< void > {
+async function processStatements ( statements: StatementCollection ) : Promise< void > {
   console.log( `Processing statements & codes ...` );
 
   const dataDir = join( process.cwd(), 'data' );
