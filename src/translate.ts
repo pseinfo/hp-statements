@@ -42,7 +42,8 @@ export class Translate {
     const out: TranslationMap = { H: {}, P: {}, EUH: {} } as TranslationMap;
 
     const process = async ( codes: readonly StatementCode[], bucket: StatementType ) => {
-      for ( const code of codes ) out[ bucket ][ code ] = await this.one( code, lang );
+      const results = await Promise.all( codes.map( code => this.one( code, lang ) ) );
+      codes.forEach( ( code, i ) => out[ bucket ][ code ] = results[ i ] );
     };
 
     await Promise.all( [
