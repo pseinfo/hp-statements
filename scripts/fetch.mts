@@ -88,7 +88,17 @@ async function saveStatementFile ( filePath: string, code: string, data: Stateme
 }
 
 async function saveCodes ( codes: string[] ) : Promise< void > {
-  //
+  const filePath = join( process.cwd(), 'src/codes.ts' );
+  const hCodes = codes.filter( c => c.startsWith( 'H' ) );
+  const pCodes = codes.filter( c => c.startsWith( 'P' ) );
+  const euhCodes = codes.filter( c => c.startsWith( 'EUH' ) );
+
+  const content = `export type HCode = ${ hCodes.map( c => `'${ c }'` ).join( ' | ' ) };\n` +
+    `export type PCode = ${ pCodes.map( c => `'${ c }'` ).join( ' | ' ) };\n` +
+    `export type EUHCode = ${ euhCodes.map( c => `'${ c }'` ).join( ' | ' ) };\n\n` +
+    `export type StatementCode = HCode | PCode | EUHCode;`;
+
+  await writeFile( filePath, content, 'utf8' );
 }
 
 async function processStatements ( statements: Statements ) : Promise< void > {
