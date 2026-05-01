@@ -26,6 +26,9 @@
     "README.md",
     "LICENSE"
   ],
+  "scripts": {
+    "fetch": "npx tsx scripts/fetch.mts"
+  },
   "devDependencies": {
     "@types/node": "^25.6.0",
     "typescript": "^6.0.3"
