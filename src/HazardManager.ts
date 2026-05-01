@@ -20,6 +20,20 @@ export class HazardManager {
     return this.map[ key ] ??= [];
   }
 
+  private freeze () : void {
+    const sort = < T extends { code: string } > ( arr: T[] ) =>
+      [ ...arr ].sort( ( a, b ) => a.code.localeCompare( b.code ) );
+
+    const result: HazardStatements = {
+      hazard: sort( this.map.hazard ?? [] ),
+      precautionary: sort( this.map.precautionary ?? [] ),
+      eu: sort( this.map.eu ?? [] )
+    };
+
+    this.map = Object.freeze( result );
+    this.frozen = true;
+  }
+
   public H ( code: HCode, context?: Context ) : this {
     this.bucket( 'hazard' ).push( { code, context } );
     return this;
@@ -33,5 +47,10 @@ export class HazardManager {
   public EUH ( code: EUHCode, context?: Context ) : this {
     this.bucket( 'eu' ).push( { code, context } );
     return this;
+  }
+
+  public build () : Readonly< HazardStatements > {
+    this.freeze();
+    return this.map;
   }
 }
