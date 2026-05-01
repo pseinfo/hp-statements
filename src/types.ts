@@ -21,7 +21,7 @@ export type CodeEntry< C extends StatementCode = StatementCode > = {
 };
 
 export type HazardStatements = {
-  hazard?: CodeEntry< HCode >[];
-  precautionary?: CodeEntry< PCode >[];
-  eu?: CodeEntry< EUHCode >[];
+  hazard: CodeEntry< HCode >[];
+  precautionary: CodeEntry< PCode >[];
+  eu: CodeEntry< EUHCode >[];
 };
