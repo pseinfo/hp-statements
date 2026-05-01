@@ -102,9 +102,9 @@ function codes2Arr ( codes: string[], maxLength = 100 ) : string {
 }
 
 async function generateCodes ( map: StatementMap ) : Promise< void > {
-  console.log( `Saving fetched codes to src/codes.ts ...` );
+  console.log( `Build index ...` );
 
-  const filePath = join( process.cwd(), 'src/codes.ts' );
+  const filePath = join( process.cwd(), 'data/index.ts' );
   const prefixes = [];
   let out = '';
 

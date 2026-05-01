@@ -1,4 +1,4 @@
-import type { EUHCode, HCode, PCode, StatementCode } from './codes';
+import type { EUHCode, HCode, PCode, StatementCode } from '../data';
 
 export type LangCode = ( typeof LangCode )[ number ];
 export const LangCode = [
