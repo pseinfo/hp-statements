@@ -1,7 +1,8 @@
 {
   "name": "@pseinfo/hp-statements",
   "description": "GHS hazard and precautionary statements",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "type": "module",
   "license": "MIT",
   "author": {
     "name": "Paul Köhler",
@@ -25,11 +26,8 @@
     "README.md",
     "LICENSE"
   ],
-  "type": "module",
-  "scripts": {
-    "lint": "tsc"
-  },
   "devDependencies": {
+    "@types/node": "^25.6.0",
     "typescript": "^6.0.3"
   }
 }
