@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P370+P372+P380+P373',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Ob požaru: Nevarnost eksplozije. Izprazniti območje. NE gasiti, ko ogenj doseže eksploziv.',
     sv: 'Vid brand: Explosionsrisk. Utrym området. Försök INTE bekämpa branden när den når explosiva varor.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

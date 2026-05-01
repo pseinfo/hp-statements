@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P371+P380+P375',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Ob velikem požaru in velikih količinah: izprazniti območje. Gasiti z večje razdalje zaradi nevarnosti eksplozije.',
     sv: 'Vid större brand och stora mängder: Utrym området. Bekämpa branden på avstånd på grund av explosionsrisken.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

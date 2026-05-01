@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P280',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Nositi zaščitne rokavice/zaščitno obleko/zaščito za oči/zaščito za obraz.',
     sv: 'Använd skyddshandskar/skyddskläder/ögonskydd/ansiktsskydd.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P315',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Takoj poiščite zdravniško pomoč/oskrbo.',
     sv: 'Sök omedelbart läkarhjälp.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

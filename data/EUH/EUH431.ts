@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH431',
@@ -27,4 +27,4 @@ export default ( {
     sl: 'Domnevno povzroča endokrine motnje v okolju.',
     sv: 'Misstänks orsaka hormonstörningar i miljön'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

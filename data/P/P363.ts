@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P363',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Kontaminirana oblačila oprati pred ponovno uporabo.',
     sv: 'Nedstänkta kläder ska tvättas innan de används igen.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

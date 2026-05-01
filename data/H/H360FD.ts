@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H360Fd',
@@ -27,4 +27,4 @@ export default ( {
     sl: 'Lahko škoduje plodnosti. Sum škodljivosti za nerojenega otroka.',
     sv: 'Kan skada fertiliteten. Misstänks kunna skada det ofödda barnet.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

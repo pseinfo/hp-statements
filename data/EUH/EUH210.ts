@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH210',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Varnosti list na voljo na zahtevo.',
     sv: 'Säkerhetsdatablad finns att rekvirera.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H314',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Povzroča hude opekline kože in poškodbe oči.',
     sv: 'Orsakar allvarliga frätskador på hud och ögon.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

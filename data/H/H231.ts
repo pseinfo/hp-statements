@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H231',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Lahko reagira eksplozivno tudi v odsotnosti zraka pri povišanem tlaku in/ali temperature.',
     sv: 'Kan reagera explosivt även i frånvaro av luft vid förhöjt tryck och/eller temperatur.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P406',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Hraniti v posodi, odporni proti koroziji/…, z odporno notranjo oblogo.',
     sv: 'Förvaras i korrosionsbeständig/… behållare med beständigt innerhölje.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

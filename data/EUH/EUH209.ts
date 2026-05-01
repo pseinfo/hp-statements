@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH209',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Med uporabo utegne postati lahko vnetljivo.',
     sv: 'Kan bli mycket brandfarligt vid användning.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

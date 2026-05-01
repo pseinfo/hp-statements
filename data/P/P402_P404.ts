@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P402+P404',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Hraniti na suhem. Hraniti v zaprti posodi.',
     sv: 'Förvaras torrt. Förvaras i sluten behållare.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

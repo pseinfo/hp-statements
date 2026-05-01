@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH014',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Burno reagira z vodo.',
     sv: 'Reagerar häftigt med vatten.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

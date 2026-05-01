@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH440',
@@ -27,4 +27,4 @@ export default ( {
     sl: 'Se kopiči v okolju in živih organizmih, tudi v ljudeh.',
     sv: 'Ackumuleras i miljön och i levande organismer, inbegripet människor.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

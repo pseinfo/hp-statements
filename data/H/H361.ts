@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H361',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Sum škodljivosti za plodnost ali nerojenega otroka <navesti posebni učinek, če je znan> <navesti način izpostavljenosti, če je prepričljivo dokazano, da noben drug način izpostavljenosti ne povzroča takšne nevarnosti>.',
     sv: 'Misstänks kunna skada fertiliteten eller det ofödda barnet <ange specifik effekt om denna är känd> <ange exponeringsväg om det är definitivt bevisat att faran inte kan orsakas av några andra exponeringsvägar>.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

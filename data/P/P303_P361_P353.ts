@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P303+P361+P353',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'PRI STIKU S KOŽO (ali lasmi): Takoj sleči vsa kontaminirana oblačila. Kožo izprati z vodo [ali prho].',
     sv: 'VID HUDKONTAKT (även håret): Ta omedelbart av alla nedstänkta kläder. Skölj huden med vatten [eller duscha].'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

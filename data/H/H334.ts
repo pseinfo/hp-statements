@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H334',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Lahko povzroči simptome alergije ali astme ali težave z dihanjem pri vdihavanju.',
     sv: 'Kan orsaka allergi- eller astmasymtom eller andningssvårigheter vid inandning.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

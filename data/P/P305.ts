@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P305',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'PRI STIKU Z OČMI:',
     sv: 'VID KONTAKT MED ÖGONEN:'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

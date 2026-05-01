@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH029',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'V stiku z vodo se sprošča strupen plin.',
     sv: 'Utvecklar giftig gas vid kontakt med vatten.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

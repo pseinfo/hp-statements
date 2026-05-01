@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P306+P360',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'PRI STIKU Z OBLAČILI: takoj izprati kontaminirana oblačila in kožo z veliko vode pred odstranitvijo oblačil.',
     sv: 'VID KONTAKT MED KLÄDERNA: Skölj omedelbart nedstänkta kläder och hud med mycket vatten innan du tar av dig kläderna.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

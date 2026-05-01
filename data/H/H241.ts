@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H241',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Segrevanje lahko povzroči požar ali eksplozijo.',
     sv: 'Brandfarligt eller explosivt vid uppvärmning.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

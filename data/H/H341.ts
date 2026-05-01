@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H341',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Sum povzročitve genetskih okvar <navesti način izpostavljenosti, če je prepričljivo dokazano, da noben drug način izpostavljenosti ne povzroča takšne nevarnosti>.',
     sv: 'Misstänks kunna orsaka genetiska defekter <ange exponeringsväg om det är definitivt bevisat att faran inte kan orsakas av några andra exponeringsvägar>.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

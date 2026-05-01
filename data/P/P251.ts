@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P251',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Ne preluknjajte ali sežigajte je niti, ko je prazna.',
     sv: 'Får inte punkteras eller brännas, gäller även tömd behållare.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

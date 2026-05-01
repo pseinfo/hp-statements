@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P283',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Nositi negorljiva oblačila ali oblačila, odporna proti ognju.',
     sv: 'Använd brandsäkra eller flamhämmande kläder.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH212',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Pozor! Pri uporabi lahko nastane nevaren vdihljiv prah. Prahu ne vdihavajte.',
     sv: 'Varning! Farligt respirabelt damm kan bildas vid användning. Inandas inte damm.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P270',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Ne jesti, piti ali kaditi med uporabo tega izdelka.',
     sv: 'Ät inte, drick inte och rök inte när du använder produkten.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

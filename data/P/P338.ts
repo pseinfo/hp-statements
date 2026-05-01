@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P338',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Odstranite kontaktne leče, če jih imate in če to lahko storite brez težav. Nadaljujte z izpiranjem.',
     sv: 'Ta ur eventuella kontaktlinser om det går lätt. Fortsätt att skölja.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

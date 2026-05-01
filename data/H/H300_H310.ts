@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H300+H310',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Smrtno pri zaužitju ali v stiku s kožo',
     sv: 'Dödligt vid förtäring eller vid hudkontakt'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

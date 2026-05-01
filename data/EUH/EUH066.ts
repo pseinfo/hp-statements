@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH066',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Ponavljajoča izpostavljenost lahko povzroči nastanek suhe ali razpokane kože.',
     sv: 'Upprepad kontakt kan ge torr hud eller hudsprickor.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

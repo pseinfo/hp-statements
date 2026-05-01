@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P413',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Razsute količine, večje od … kg/… lbs, hraniti pri temperaturi do … °C/… °F.',
     sv: 'Bulkprodukter som väger mer än … kg/… lbs förvaras vid högst … °C/…°F.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

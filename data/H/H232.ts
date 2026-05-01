@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H232',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'V stiku z zrakom lahko pride do samodejnega vžiga.',
     sv: 'Kan spontanantända vid kontakt med luft.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

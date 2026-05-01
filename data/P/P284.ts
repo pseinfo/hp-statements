@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P284',
@@ -28,4 +28,4 @@ export default ( {
     sl: '[Ob nezadostnem prezračevanju] nositi opremo za zaščito dihal.',
     sv: '[Vid otillräcklig ventilation], använd andningsskydd.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

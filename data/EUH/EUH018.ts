@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH018',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Pri uporabi lahko tvori vnetljivo/eksplozivno zmes hlapi-zrak.',
     sv: 'Vid användning kan brännbara/explosiva ång-luftblandningar bildas.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

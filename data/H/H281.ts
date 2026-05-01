@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H281',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Vsebuje ohlajen utekočinjen plin; lahko povzroči ozebline ali poškodbe.',
     sv: 'Innehåller kyld gas. Kan orsaka svåra köldskador.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

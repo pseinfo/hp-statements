@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H208',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Nevarnost za nastanek požara; povečana nevarnost eksplozije, če se zmanjša vsebnost desenzibilizatorja.',
     sv: 'Fara för brand, ökad explosionsrisk om det okänsliggörande ämnet minskas.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

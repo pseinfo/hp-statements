@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH019',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Lahko tvori eksplozivne perokside.',
     sv: 'Kan bilda explosiva peroxider.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH450',
@@ -27,4 +27,4 @@ export default ( {
     sl: 'Lahko povzroči dolgotrajno in razpršeno kontaminacijo vodnih virov.',
     sv: 'Långlivat ämne som kan förorena vattenkällor'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P210',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Hraniti ločeno od vročine, vročih površin, isker, odprtega ognja in drugih virov vžiga. Kajenje prepovedano.',
     sv: 'Får inte utsättas för värme, heta ytor, gnistor, öppen låga eller andra antändningskällor. Rökning förbjuden.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

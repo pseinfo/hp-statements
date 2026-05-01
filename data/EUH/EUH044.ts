@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH044',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Nevarnost eksplozije ob segrevanju v zaprtem prostoru.',
     sv: 'Explosionsrisk vid uppvärmning i sluten behållare.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

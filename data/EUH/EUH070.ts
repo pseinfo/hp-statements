@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH070',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Strupeno ob stiku z očmi.',
     sv: 'Giftigt vid kontakt med ögonen.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

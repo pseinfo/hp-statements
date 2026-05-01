@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P202',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Ne uporabljajte, dokler se ne seznanite z vsemi varnostnimi ukrepi.',
     sv: 'Använd inte produkten innan du har läst och förstått säkerhetsanvisningarna'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

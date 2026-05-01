@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P305+P351+P338',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'PRI STIKU Z OČMI: Previdno izpirati z vodo nekaj minut. Odstranite kontaktne leče, če jih imate in če to lahko storite brez težav. Nadaljujte z izpiranjem.',
     sv: 'VID KONTAKT MED ÖGONEN: Skölj försiktigt med vatten i flera minuter. Ta ur eventuella kontaktlinser om det går lätt. Fortsätt att skölja.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

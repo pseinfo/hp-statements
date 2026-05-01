@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH208',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Vsebuje <ime snovi, ki povzroča preobčutljivost>. Lahko povzroči alergijski odziv.',
     sv: 'Innehåller <namnet på det sensibiliserande ämnet>. Kan orsaka en allergisk reaktion.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

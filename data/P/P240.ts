@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P240',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Ozemljiti posodo in opremo za sprejem tekočine ter izenačiti potenciale.',
     sv: 'Jorda och potentialförbind behållare och mottagarutrustning.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

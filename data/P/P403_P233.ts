@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P403+P233',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Hraniti na dobro prezračevanem mestu. Hraniti v tesno zaprti posodi.',
     sv: 'Förvaras på väl ventilerad plats. Förpackningen ska förvaras väl tillsluten.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

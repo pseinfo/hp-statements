@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P231+P232',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Ravnati z vsebino in jo hraniti v ustreznem inertnem plinu/…. Zaščititi pred vlago.',
     sv: 'Hantera och förvara innehållet under inert gas/…. Skyddas från fukt.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H350i',
@@ -27,4 +27,4 @@ export default ( {
     sl: 'Lahko povzroči raka pri vdihavanju.',
     sv: 'Kan orsaka cancer vid inandning.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

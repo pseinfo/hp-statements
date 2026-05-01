@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH207',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Pozor! Vsebuje kadmij. Med uporabo nastajajo nevarni dimi. Preberite informacije proizvajalca. Upoštevajte navodila za varno uporabo.',
     sv: 'Varning! Innehåller kadmium. Farliga ångor bildas vid användning. Se information från tillverkaren. Följ skyddsanvisningarna.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

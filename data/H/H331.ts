@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H331',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Strupeno pri vdihavanju.',
     sv: 'Giftigt vid inandning.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

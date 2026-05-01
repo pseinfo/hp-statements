@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P101',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Če je potreben zdravniški nasvet, mora biti na voljo posoda ali etiketa proizvoda.',
     sv: 'Ha förpackningen eller etiketten till hands om du måste söka läkarvård.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P412',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Ne izpostavljati temperaturam nad 50 °C/122 °F.',
     sv: 'Får inte utsättas för temperaturer över 50 °C/122 °F.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

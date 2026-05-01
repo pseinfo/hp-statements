@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P304+P340',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'PRI VDIHAVANJU: Prenesti osebo na svež zrak in jo pustiti v udobnem položaju, ki olajša dihanje.',
     sv: 'VID INANDNING: Flytta personen till frisk luft och se till att andningen underlättas.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

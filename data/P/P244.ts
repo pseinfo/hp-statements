@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P244',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Preprečiti stik ventilov in opreme z oljem in mastjo.',
     sv: 'Håll ventiler och anslutningar fria från olja och fett.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

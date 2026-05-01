@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P212',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Izogibati se segrevanju v zaprtem prostoru ali zmanjšanju vsebnosti desenzibilizatorja.“.',
     sv: 'Undvik uppvärmning i sluten behållare eller reducering av det okänsliggörande ämnet."
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

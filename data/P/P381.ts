@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P381',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'V primeru uhajanja odstraniti vse vire vžiga.',
     sv: 'Vid läckage, avlägsna alla antändningskällor.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

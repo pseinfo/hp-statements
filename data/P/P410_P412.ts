@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P410+P412',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Zaščititi pred sončno svetlobo. Ne izpostavljati temperaturam nad 50 °C/122 °F.',
     sv: 'Skyddas från solljus. Får inte utsättas för temperaturer över 50 °C/122 °F.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

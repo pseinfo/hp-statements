@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P241',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Uporabiti [električno opremo/prezračevalno opremo/ opremo za razsvetljavo/…], odporno proti eksplozijam.',
     sv: 'Använd explosionssäker [elektrisk/ventilations-/belysnings-/…]utrustning.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

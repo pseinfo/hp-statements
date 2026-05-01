@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P272',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Kontaminirana delovna oblačila niso dovoljena zunaj delovnega mesta.',
     sv: 'Nedstänkta arbetskläder får inte avlägsnas från arbetsplatsen.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

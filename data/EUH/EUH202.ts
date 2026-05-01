@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH202',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Cianoakrilat. Nevarno. Kožo in oči zlepi v nekaj sekundah. Hraniti zunaj dosega otrok.',
     sv: 'Cyanoakrylat. Fara. Fäster snabbt på hud och ögon. Förvaras oåtkomligt för barn.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

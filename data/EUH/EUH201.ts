@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH201',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Vsebuje svinec. Ne sme se nanašati na površine, ki bi jih lahko žvečili ali sesali otroci.',
     sv: 'Innehåller bly. Bör inte användas på ytor där barn kan komma åt att tugga eller suga.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

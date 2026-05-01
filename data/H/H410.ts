@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H410',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Zelo strupeno za vodne organizme, z dolgotrajnimi učinki.',
     sv: 'Mycket giftigt för vattenlevande organismer med långtidseffekter.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

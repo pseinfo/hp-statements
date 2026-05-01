@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P271',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Uporabljati le zunaj ali v dobro prezračevanem prostoru.',
     sv: 'Används endast utomhus eller i väl ventilerade utrymmen.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

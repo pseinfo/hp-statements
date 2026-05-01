@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH205',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Vsebuje epoksidne sestavine. Lahko povzroči alergijski odziv.',
     sv: 'Innehåller epoxiförening. Kan orsaka en allergisk reaktion.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

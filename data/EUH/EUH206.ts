@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH206',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Pozor! Ne uporabljajte skupaj z drugimi izdelki. Lahko se sproščajo nevarni plini (klor).',
     sv: 'Varning! Får ej användas tillsammans med andra produkter. Kan avge farliga gaser (klor).'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

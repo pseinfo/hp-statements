@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H250',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Samodejno se vžge na zraku.',
     sv: 'Spontanantänder vid kontakt med luft.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

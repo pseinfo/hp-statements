@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P336',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Zamrznjene dele odtaliti z mlačno vodo. Ne drgniti prizadetega mesta.',
     sv: 'Värm det köldskadade området med ljummet vatten. Gnid inte det skadade området.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

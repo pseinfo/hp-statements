@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P211',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Ne pršiti proti odprtemu ognju ali drugemu viru vžiga.',
     sv: 'Spreja inte över öppen låga eller andra antändningskällor.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'EUH401',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Da bi se izognili tveganjem za ljudi in okolje, ravnajte v skladu z navodili za uporabo.',
     sv: 'För att undvika risker för människors hälsa och för miljön, följ bruksanvisningen.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

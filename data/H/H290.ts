@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H290',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Lahko je jedko za kovine.',
     sv: 'Kan vara korrosivt för metaller.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

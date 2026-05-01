@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'P502',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Za podatke glede predelave ali reciklaže se obrnite na proizvajalca ali dobavitelja.',
     sv: 'Rådfråga tillverkare eller leverantör om återvinning eller återanvändning.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;

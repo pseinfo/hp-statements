@@ -1,4 +1,4 @@
-import type { Statement } from '../../src/types';
+import type { StatementConfig } from '../../src/types';
 
 export default ( {
   code: 'H224',
@@ -28,4 +28,4 @@ export default ( {
     sl: 'Zelo lahko vnetljiva tekočina in hlapi.',
     sv: 'Extremt brandfarlig vätska och ånga.'
   }
-} ) as const satisfies Statement;
+} ) as const satisfies StatementConfig;
