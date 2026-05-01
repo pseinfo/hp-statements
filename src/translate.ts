@@ -39,4 +39,25 @@ export class Translate {
   ) : Promise< StatementConfig[ 'translations' ] > {
     return ( await this.load( code ) )?.translations ?? {};
   }
+
+  public static async all ( lang: LangCode ) : Promise< TranslationMap > {
+    const out: TranslationMap = { H: {}, P: {}, EUH: {} };
+
+    const process = async ( codes: readonly StatementCode[], bucket: StatementType ) => {
+      for ( const code of codes ) {
+        const s = await this.load( code );
+        const t = s?.translations[ lang ] ?? s?.translations[ this.fallback ];
+
+        if ( t ) out[ bucket ][ code ] = t;
+      }
+    };
+
+    await Promise.all( [
+      process( HCode, 'H' ),
+      process( PCode, 'P' ),
+      process( EUHCode, 'EUH' )
+    ] );
+
+    return out;
+  }
 }
