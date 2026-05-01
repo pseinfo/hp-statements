@@ -23,11 +23,16 @@
     "pseinfo"
   ],
   "files": [
+    "data",
+    "bin",
+    "dist",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "fetch": "npx tsx scripts/fetch.mts"
+    "fetch": "npx tsx scripts/fetch.mts",
+    "lint": "tsc --noEmit",
+    "build": "tsc --project tsconfig.build.json"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",

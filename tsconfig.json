@@ -4,8 +4,6 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "types": [ "node" ],
-    "rootDir": ".",
-    "outDir": "./dist",
     "esModuleInterop": true,
     "declaration": true,
     "strict": true,
