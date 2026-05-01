@@ -8,18 +8,18 @@ export class Translate {
   private static cache = new Map< StatementCode, StatementConfig >();
   private static readonly fallback: LangCode = 'en';
 
-  private static prefix ( code: StatementCode ) : StatementType {
-    return code.match( /^[A-Z]+/ )?.[ 0 ]! as StatementType;
+  private static code2path ( code: StatementCode ) : string {
+    const prefix = code.match( /^[A-Z]+/ )?.[ 0 ]!;
+    const name = code.replace( /\+/g, '_' );
+
+    return `../data/${ prefix }/${ name }.ts`;
   }
 
   private static async load ( code: StatementCode ) : Promise< StatementConfig | undefined > {
     if ( this.cache.has( code ) ) return this.cache.get( code );
 
-    const prefix = this.prefix( code );
-    if ( ! prefix ) return;
-
     try {
-      const mod = await import( `../data/${ prefix }/${ code }.ts` );
+      const mod = await import( this.code2path( code ) );
       const data = mod.default as StatementConfig;
 
       this.cache.set( code, data );
