@@ -1,3 +1,5 @@
+import { mkdir } from 'node:fs/promises';
+import { join } from 'node:path';
 import { LANGUAGES } from '../src/types';
 
 const REPO_URL = 'https://raw.githubusercontent.com/mhchem/hpstatements/master/clp';
@@ -47,9 +49,17 @@ async function fetchStatements () : Promise< Statements > {
   return statements;
 }
 
+async function saveStatements ( statements: Statements ) : Promise< void > {
+  const dataDir = join( process.cwd(), 'data' );
+  await mkdir( dataDir, { recursive: true } );
+
+  void [ statements ];
+}
+
 ( async () => {
   try {
     const statements = await fetchStatements();
+    saveStatements( statements );
   } catch ( err ) {
     console.error( err );
   }
