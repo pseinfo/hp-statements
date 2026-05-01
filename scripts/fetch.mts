@@ -46,3 +46,11 @@ async function fetchStatements () : Promise< Statements > {
 
   return statements;
 }
+
+( async () => {
+  try {
+    const statements = await fetchStatements();
+  } catch ( err ) {
+    console.error( err );
+  }
+} )();
