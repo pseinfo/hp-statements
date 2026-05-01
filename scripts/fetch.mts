@@ -53,7 +53,9 @@ async function fetchStatements () : Promise< StatementMap > {
 // ---- STATEMENTS ----
 
 function statement2Str ( s: Statement ) : string {
-  return stringify( s, { space: 2 } )!
+  return ( stringify( s, { space: 2 } ) ?? '{}' )
+    .replace( /\u00A0/g, ' ' ).replace( /[\u200B-\u200D\uFEFF]/g, '' )
+    .replace( /\r\n/g, '\n' ).trim()
     .replace( /"([^"]*)"/g, ( _, v ) => `'${ v.replace( /'/g, "\\'" ).replace( /\\"/g, '"' ) }'` )
     .replace( /'([a-zA-Z_$][a-zA-Z0-9_$]*)':/g, '$1:' );
 }
