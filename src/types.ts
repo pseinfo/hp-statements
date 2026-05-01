@@ -6,22 +6,26 @@ export const LangCode = [
   'hu', 'it', 'lt', 'lv', 'mt', 'nl', 'pl', 'pt', 'ro', 'sk', 'sl', 'sv'
 ] as const;
 
-export type StatementPrefix = ( typeof StatementPrefix )[ number ];
-export const StatementPrefix = [ 'H', 'P', 'EUH' ] as const;
+export type StatementType = ( typeof StatementType )[ number ];
+export const StatementType = [ 'H', 'P', 'EUH' ] as const;
 
-export type Statement = {
+export type StatementConfig = {
   code: string;
   translations: { [ K in LangCode ]?: string };
 };
 
-export type CodeEntry< C extends StatementCode = StatementCode > = {
-  code: C;
+export type Context = {
   deprecated?: boolean;
   notes?: string;
 };
 
+export type Statement< C extends StatementCode = StatementCode > = {
+  code: C;
+  context?: Context;
+};
+
 export type HazardStatements = {
-  hazard: CodeEntry< HCode >[];
-  precautionary: CodeEntry< PCode >[];
-  eu: CodeEntry< EUHCode >[];
+  hazard?: Statement< HCode >[];
+  precautionary?: Statement< PCode >[];
+  eu?: Statement< EUHCode >[];
 };
