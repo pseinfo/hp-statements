@@ -18,7 +18,7 @@ interface RawStatement {
 }
 
 async function fetchLanguage ( lang: string ) : Promise< RawStatement[] > {
-  console.log( `Fetching ${ lang } ...` );
+  console.log( `... for ${ lang } ...` );
   const response = await fetch( `${ REPO_URL }/hpstatements-${ lang }-latest.json` );
 
   if ( ! response.ok ) {
@@ -38,6 +38,7 @@ async function fetchLanguage ( lang: string ) : Promise< RawStatement[] > {
 }
 
 async function fetchStatements () : Promise< Statements > {
+  console.log( `Fetching statements ...` );
   const statements: Statements = {};
 
   for ( const lang of LANGUAGES ) {
@@ -88,6 +89,8 @@ async function saveStatementFile ( filePath: string, code: string, data: Stateme
 }
 
 async function saveCodes ( codes: string[] ) : Promise< void > {
+  console.log( `Saving generated codes to src/codes.ts ...` );
+
   const filePath = join( process.cwd(), 'src/codes.ts' );
   const hCodes = codes.filter( c => c.startsWith( 'H' ) );
   const pCodes = codes.filter( c => c.startsWith( 'P' ) );
@@ -102,6 +105,8 @@ async function saveCodes ( codes: string[] ) : Promise< void > {
 }
 
 async function processStatements ( statements: Statements ) : Promise< void > {
+  console.log( `Processing statements & codes ...` );
+
   const dataDir = join( process.cwd(), 'data' );
   await mkdir( dataDir, { recursive: true } );
 
@@ -124,10 +129,6 @@ async function processStatements ( statements: Statements ) : Promise< void > {
 }
 
 ( async () => {
-  try {
-    const statements = await fetchStatements();
-    processStatements( statements );
-  } catch ( err ) {
-    console.error( err );
-  }
+  try { processStatements( await fetchStatements() ) }
+  catch ( err ) { console.error( err ) }
 } )();
