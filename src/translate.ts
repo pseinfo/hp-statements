@@ -23,4 +23,11 @@ export class Translate {
       return data;
     } catch { return }
   }
+
+  public static async one < C extends StatementCode > (
+    code: C, lang: LangCode, fallback: LangCode = this.fallback
+  ) : Promise< string | undefined > {
+    const s = await this.load( code );
+    return s?.translations[ lang ] ?? s?.translations[ fallback ];
+  }
 }
