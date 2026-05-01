@@ -1,6 +1,9 @@
-import { writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { LangCode, Statement, StatementPrefix } from '../src/types';
+import stringify from 'json-stable-stringify';
+
+import type { Statement } from '../src/types';
+import { LangCode, StatementPrefix } from '../src/types';
 
 const REPO_URL = 'https://raw.githubusercontent.com/mhchem/hpstatements/master/clp';
 
@@ -43,9 +46,34 @@ async function fetchStatements () : Promise< StatementMap > {
   return map;
 }
 
-// ---- PROCESSING ----
+// ---- STATEMENTS ----
 
-function codeArray ( codes: string[], maxLength = 100 ) : string {
+function statement2Str ( s: Statement ) : string {
+  return stringify( s, { space: 2 } )!
+    .replace( /"([^"]*)"/g, ( _, v ) => `'${ v.replace( /'/g, "\\'" ).replace( /\\"/g, '"' ) }'` )
+    .replace( /'([a-zA-Z_$][a-zA-Z0-9_$]*)':/g, '$1:' );
+}
+
+async function processStatements ( map: StatementMap ) : Promise< void > {
+  for ( const [ prefix, list ] of Object.entries( map ) ) {
+    const dir = join( process.cwd(), 'data', prefix );
+    await mkdir( dir, { recursive: true } );
+
+    for ( const [ code, s ] of Object.entries( list ) ) {
+      const file = join( dir, `${ code.replace( /\+/g, '_' ) }.ts` );
+      let out = '';
+
+      out += `import type { Statement } from '../../src/types';\n\n`;
+      out += `export default ( ${ statement2Str( s ) } ) as const satisfies Statement;\n`;
+
+      await writeFile( file, out, 'utf8' );
+    }
+  }
+}
+
+// ---- CODES ----
+
+function codes2Arr ( codes: string[], maxLength = 100 ) : string {
   const lines: string[] = [];
   let cur: string[] = [], curLen = 2;
 
@@ -74,7 +102,7 @@ async function generateCodes( map: StatementMap ) : Promise< void > {
     prefixes.push( prefix );
 
     out += `export type ${ prefix }Code = ( typeof ${ prefix }Code )[ number ];\n`;
-    out += `export const ${ prefix }Code = ${ codeArray( Object.keys( list ).sort() ) } as const;\n\n`;
+    out += `export const ${ prefix }Code = ${ codes2Arr( Object.keys( list ).sort() ) } as const;\n\n`;
   }
 
   out += `export type StatementCode = ${ prefixes.map( p => `${ p }Code` ).join( ' | ' ) };\n`;
@@ -86,6 +114,7 @@ async function generateCodes( map: StatementMap ) : Promise< void > {
 ( async () => {
   try {
     const map = await fetchStatements()
+    await processStatements( map );
     await generateCodes( map );
   }
   catch ( err ) { console.error( err ) }
