@@ -2,6 +2,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { LangCode, Statement } from '../src/types';
 
+const PREFIX = [ 'H', 'P', 'EUH' ];
 const REPO_URL = 'https://raw.githubusercontent.com/mhchem/hpstatements/master/clp';
 const INDENT = '  ';
 
@@ -87,15 +88,16 @@ async function saveStatementFile ( filePath: string, code: string, data: Stateme
 async function saveCodes ( codes: string[] ) : Promise< void > {
   console.log( `Saving generated codes to src/codes.ts ...` );
 
-  const filePath = join( process.cwd(), 'src/codes.ts' );
-  const hCodes = codes.filter( c => c.startsWith( 'H' ) );
-  const pCodes = codes.filter( c => c.startsWith( 'P' ) );
-  const euhCodes = codes.filter( c => c.startsWith( 'EUH' ) );
+  const codes2List = ( c: string[] ) : string => c.reduce( ( acc: string[], _, i ) => (
+    i % 5 === 0 ? acc.push( `  | ${ c.slice( i, i + 5 ).map( x => `'${ x }'` ).join( ' | ' ) }` ) : acc, acc
+  ), [] ).join( '\n' );
 
-  const content = `export type HCode = ${ hCodes.map( c => `'${ c }'` ).join( ' | ' ) };\n` +
-    `export type PCode = ${ pCodes.map( c => `'${ c }'` ).join( ' | ' ) };\n` +
-    `export type EUHCode = ${ euhCodes.map( c => `'${ c }'` ).join( ' | ' ) };\n\n` +
-    `export type StatementCode = HCode | PCode | EUHCode;`;
+  const filePath = join( process.cwd(), 'src/codes.ts' );
+  const content = PREFIX.map( prefix =>
+    `export type ${ prefix }Code =\n${ codes2List( codes.filter( c => c.startsWith( prefix ) ) ) }`
+  ).join( '\n\n' ) + `;\n\nexport type StatementCode = ${
+    PREFIX.map( prefix => `${ prefix }Code` ).join( ' | ' )
+  };\n`;
 
   await writeFile( filePath, content, 'utf8' );
 }
@@ -109,11 +111,7 @@ async function processStatements ( statements: StatementCollection ) : Promise< 
   const codes: string[] = [];
 
   for ( const [ code, data ] of Object.entries( statements ) ) {
-    let subDir = code.startsWith( 'H' ) ? 'h'
-      : code.startsWith( 'P' ) ? 'p'
-      : code.startsWith( 'EUH' ) ? 'euh'
-      : 'other';
-
+    const subDir = PREFIX.find( prefix => code.startsWith( prefix ) )?.toLowerCase() || 'other';
     const dir = join( dataDir, subDir );
     const filePath = join( dir, `${ code.replace( /\+/g, '_' ) }.ts` );
 
