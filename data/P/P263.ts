@@ -24,7 +24,7 @@ export default ( {
     pl: 'Unikać kontaktu w czasie ciąży i podczas karmienia piersią.',
     pt: 'Evitar o contacto durante a gravidez e o aleitamento.',
     ro: 'Evitați contactul în timpul sarcinii și alăptării.',
-    sk: 'Zabráňte kontaktu počas tehotenstva a dojčenia.',
+    sk: 'Zabráňte kontaktu počas tehotenstva a dojčenia.',
     sl: 'Preprečiti stik med nosečnostjo in dojenjem.',
     sv: 'Undvik kontakt under graviditet och amning.'
   }

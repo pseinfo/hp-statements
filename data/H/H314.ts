@@ -4,7 +4,7 @@ export default ( {
   code: 'H314',
   translations: {
     bg: 'Причинява тежки изгаряния на кожата и сериозно увреждане на очите.',
-    cs: 'Způsobuje těžké poleptání kůže a poškození očí.',
+    cs: 'Způsobuje těžké poleptání kůže a poškození očí.',
     da: 'Forårsager svære ætsninger af huden og øjenskader.',
     de: 'Verursacht schwere Verätzungen der Haut und schwere Augenschäden.',
     el: 'Προκαλεί σοβαρά δερματικά εγκαύματα και οφθαλμικές βλάβες.',

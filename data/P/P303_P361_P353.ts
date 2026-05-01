@@ -4,7 +4,7 @@ export default ( {
   code: 'P303+P361+P353',
   translations: {
     bg: 'ПРИ КОНТАКТ С КОЖАТА (или косата): незабавно свалете цялото замърсено облекло. Облейте кожата с вода [или вземете душ].',
-    cs: 'PŘI STYKU S KŮŽÍ (nebo s vlasy): Veškeré kontaminované části oděvu okamžitě svlékněte. Opláchněte kůži vodou [nebo osprchujte].',
+    cs: 'PŘI STYKU S KŮŽÍ (nebo s vlasy): Veškeré kontaminované části oděvu okamžitě svlékněte. Opláchněte kůži vodou [nebo osprchujte].',
     da: 'VED KONTAKT MED HUDEN (eller håret): Tilsmudset tøj tages straks af/fjernes. Skyl [eller brus] huden med vand.',
     de: 'BEI BERÜHRUNG MIT DER HAUT (oder dem Haar): Alle kontaminierten Kleidungsstücke sofort ausziehen. Haut mit Wasser abwaschen [oder duschen].',
     el: 'ΣΕ ΠΕΡΙΠΤΩΣΗ ΕΠΑΦΗΣ ΜΕ ΤΟ ΔΕΡΜΑ (ή με τα μαλλιά): Βγάλτε αμέσως όλα τα μολυσμένα ρούχα. Ξεπλύνετε την επιδερμίδα με νερό [ή στο ντους].',
@@ -24,7 +24,7 @@ export default ( {
     pl: 'W PRZYPADKU KONTAKTU ZE SKÓRĄ (lub z włosami): Natychmiast zdjąć całą zanieczyszczoną odzież. Spłukać skórę pod strumieniem wody [lub prysznicem].',
     pt: 'SE ENTRAR EM CONTACTO COM A PELE (ou o cabelo): Retirar imediatamente toda a roupa contaminada. Enxaguar a pele com água [ou tomar um duche].',
     ro: 'ÎN CAZ DE CONTACT CU PIELEA (sau cu părul): Scoateți imediat toată îmbrăcămintea contaminată. Clătiți pielea cu apă [sau faceți duș].',
-    sk: 'PRI KONTAKTE S POKOŽKOU (alebo vlasmi): Vyzlečte všetky kontaminované časti odevu. Pokožku ihneď opláchnite vodou [alebo sprchou].',
+    sk: 'PRI KONTAKTE S POKOŽKOU (alebo vlasmi): Vyzlečte všetky kontaminované časti odevu. Pokožku ihneď opláchnite vodou [alebo sprchou].',
     sl: 'PRI STIKU S KOŽO (ali lasmi): Takoj sleči vsa kontaminirana oblačila. Kožo izprati z vodo [ali prho].',
     sv: 'VID HUDKONTAKT (även håret): Ta omedelbart av alla nedstänkta kläder. Skölj huden med vatten [eller duscha].'
   }

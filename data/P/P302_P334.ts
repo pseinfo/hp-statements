@@ -4,7 +4,7 @@ export default ( {
   code: 'P302+P334',
   translations: {
     bg: 'ПРИ КОНТАКТ С КОЖАТА: потопете в хладка вода или сложете мокри компреси.',
-    cs: 'PŘI STYKU S KŮŽÍ: Ponořte do studené vody nebo zabalte do vlhkého obvazu.',
+    cs: 'PŘI STYKU S KŮŽÍ: Ponořte do studené vody nebo zabalte do vlhkého obvazu.',
     da: 'VED KONTAKT MED HUDEN: Hold under koldt vand eller anvend våde omslag.',
     de: 'BEI BERÜHRUNG MIT DER HAUT: In kaltes Wasser tauchen oder nassen Verband anlegen.',
     el: 'ΣΕ ΠΕΡΙΠΤΩΣΗ ΕΠΑΦΗΣ ΜΕ ΤΟ ΔΕΡΜΑ: Βυθίστε σε δροσερό νερό ή τυλίξτε με βρεγμένους επιδέσμους.',
@@ -24,7 +24,7 @@ export default ( {
     pl: 'W PRZYPADKU KONTAKTU ZE SKÓRĄ: Zanurzyć w zimnej wodzie lub owinąć mokrym bandażem.',
     pt: 'SE ENTRAR EM CONTACTO COM A PELE: Mergulhar em água fria ou aplicar compressas húmidas.',
     ro: 'ÎN CAZ DE CONTACT CU PIELEA: Introduceți în apă rece sau acoperiți cu o compresă umedă.',
-    sk: 'PRI KONTAKTE S POKOŽKOU: Ponorte do studenej vody alebo obviažte mokrými obväzmi.',
+    sk: 'PRI KONTAKTE S POKOŽKOU: Ponorte do studenej vody alebo obviažte mokrými obväzmi.',
     sl: 'PRI STIKU S KOŽO: Potopiti v hladno vodo ali zaviti v mokre povoje.',
     sv: 'VID HUDKONTAKT: Skölj under kallt vatten eller använd våta omslag.'
   }

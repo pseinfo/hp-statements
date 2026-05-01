@@ -24,7 +24,7 @@ export default ( {
     pl: 'Przechowywać w pojemniku odpornym na korozję /… o odpornej powłoce wewnętrznej.',
     pt: 'Armazenar num recipiente resistente à corrosão/… com um revestimento interior resistente.',
     ro: 'A se depozita într-un recipient rezistent la coroziune/recipient din… cu dublură interioară rezistentă la coroziune.',
-    sk: 'Uchovávajte v nádobe odolnej proti korózii/… nádobe s odolnou vnútornou vrstvou.',
+    sk: 'Uchovávajte v nádobe odolnej proti korózii/… nádobe s odolnou vnútornou vrstvou.',
     sl: 'Hraniti v posodi, odporni proti koroziji/…, z odporno notranjo oblogo.',
     sv: 'Förvaras i korrosionsbeständig/… behållare med beständigt innerhölje.'
   }

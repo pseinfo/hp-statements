@@ -24,7 +24,7 @@ export default ( {
     pl: 'Przechowywać wyłącznie w oryginalnym opakowaniu.',
     pt: 'Mantenha sempre o produto na sua embalagem original.',
     ro: 'A se păstra numai în ambalajul original.',
-    sk: 'Uchovávajte iba v pôvodnom balení.',
+    sk: 'Uchovávajte iba v pôvodnom balení.',
     sl: 'Hraniti samo v originalni embalaži.',
     sv: 'Förvaras endast i originalförpackningen.'
   }

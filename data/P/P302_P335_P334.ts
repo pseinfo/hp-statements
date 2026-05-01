@@ -4,7 +4,7 @@ export default ( {
   code: 'P302+P335+P334',
   translations: {
     bg: 'ПРИ КОНТАКТ С КОЖАТА: отстранете от кожата посипаните частици. Потопете в хладка вода [или сложете мокри компреси].',
-    cs: 'PŘI STYKU S KŮŽÍ: Volné částečky odstraňte z kůže. Ponořte do studené vody [nebo zabalte do vlhkého obvazu].',
+    cs: 'PŘI STYKU S KŮŽÍ: Volné částečky odstraňte z kůže. Ponořte do studené vody [nebo zabalte do vlhkého obvazu].',
     da: 'VED KONTAKT MED HUDEN: Børst løse partikler bort fra huden. Hold under koldt vand [eller anvend våde omslag].',
     de: 'BEI BERÜHRUNG MIT DER HAUT: Lose Partikel von der Haut abbürsten. In kaltes Wasser tauchen [oder nassen Verband anlegen].',
     el: 'ΣΕ ΠΕΡΙΠΤΩΣΗ ΕΠΑΦΗΣ ΜΕ ΤΟ ΔΕΡΜΑ: Αφαιρέστε προσεκτικά τα σωματίδια που έχουν μείνει στο δέρμα με μια βούρτσα. Βυθίστε σε δροσερό νερό [ή τυλίξτε με βρεγμένους επιδέσμους].',
@@ -24,7 +24,7 @@ export default ( {
     pl: 'W PRZYPADKU KONTAKTU ZE SKÓRĄ: Niezwiązaną pozostałość strzepnąć ze skóry. Zanurzyć w zimnej wodzie [lub owinąć mokrym bandażem].',
     pt: 'SE ENTRAR EM CONTACTO COM A PELE: Sacudir da pele as partículas soltas. Mergulhar em água fria [ou aplicar compressas húmidas].',
     ro: 'ÎN CAZ DE CONTACT CU PIELEA: Îndepărtați particulele depuse pe piele. Introduceți în apă rece [sau acoperiți cu o compresă umedă].',
-    sk: 'PRI KONTAKTE S POKOŽKOU: Z pokožky oprášte sypké čiastočky. Ponorte do studenej vody [alebo obviažte mokrými obväzmi].',
+    sk: 'PRI KONTAKTE S POKOŽKOU: Z pokožky oprášte sypké čiastočky. Ponorte do studenej vody [alebo obviažte mokrými obväzmi].',
     sl: 'PRI STIKU S KOŽO: S krtačo odstraniti razsute delce s kože. Potopiti v hladno vodo [ali zaviti v mokre povoje].',
     sv: 'VID HUDKONTAKT: Borsta bort lösa partiklar från huden. Skölj under kallt vatten [eller använd våta omslag].'
   }

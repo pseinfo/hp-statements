@@ -24,7 +24,7 @@ export default ( {
     pl: 'Przechowywać zgodnie z … .',
     pt: 'Armazenar em conformidade com… .',
     ro: 'A se depozita în conformitate cu… .',
-    sk: 'Skladujte v súlade s… .',
+    sk: 'Skladujte v súlade s… .',
     sl: 'Hraniti v skladu s/z… .',
     sv: 'Förvaras enligt … .'
   }

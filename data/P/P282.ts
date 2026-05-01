@@ -24,7 +24,7 @@ export default ( {
     pl: 'Nosić rękawice izolujące od zimna oraz albo maski na twarz albo ochronę oczu.',
     pt: 'Usar luvas de proteção contra o frio e escudo facial ou proteção ocular.',
     ro: 'Purtați mănuși izolante împotriva frigului și echipament de protecție a feței sau a ochilor.',
-    sk: 'Používajte termostabilné rukavice a buď ochranný štít alebo ochranné okuliare.',
+    sk: 'Používajte termostabilné rukavice a buď ochranný štít alebo ochranné okuliare.',
     sl: 'Nositi izolirne rokavice za zaščito pred mrazom in zaščito za obraz oziroma zaščito za oči.',
     sv: 'Använd köldisolerande handskar och antingen visir eller ögonskydd.'
   }

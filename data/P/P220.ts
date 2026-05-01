@@ -24,7 +24,7 @@ export default ( {
     pl: 'Trzymać z dala od odzieży i innych materiałów zapalnych.',
     pt: 'Manter afastado da roupa e de outras matérias combustíveis.',
     ro: 'A se păstra departe de îmbrăcăminte și de alte materiale combustibile.',
-    sk: 'Uchovávajte mimo odevov a iných horľavých materiálov.',
+    sk: 'Uchovávajte mimo odevov a iných horľavých materiálov.',
     sl: 'Hraniti ločeno od oblačil in drugih vnetljivih materialov.',
     sv: 'Hålls åtskilt från kläder och andra brännbara material.'
   }

@@ -4,7 +4,7 @@ export default ( {
   code: 'P502',
   translations: {
     bg: 'Обърнете се към производителя или доставчика за информация относно оползотворяването или рециклирането.',
-    cs: 'Informujte se u výrobce nebo dodavatele o regeneraci nebo recyklaci.',
+    cs: 'Informujte se u výrobce nebo dodavatele o regeneraci nebo recyklaci.',
     da: 'Indhent oplysninger om genindvinding/genanvendelse hos fabrikanten/leverandøren.',
     de: 'Informationen zur Wiederverwendung oder Wiederverwertung beim Hersteller oder Lieferanten erfragen.',
     el: 'Ανατρέξτε στον παρασκευαστή ή τον προμηθευτή για πληροφορίες όσον αφορά την ανάκτηση ή την ανακύκλωση.',
@@ -24,7 +24,7 @@ export default ( {
     pl: 'Przestrzegać wskazówek producenta lub dostawcy dotyczących odzysku lub wtórnego wykorzystania.',
     pt: 'Solicitar ao fabricante ou fornecedor informações relativas à recuperação ou reciclagem.',
     ro: 'Adresați-vă producătorului sau furnizorului pentru informații privind recuperarea/reciclarea.',
-    sk: 'Obráťte sa na výrobcu alebo dodávateľa s požiadavkou o informácie týkajúce sa obnovenia alebo recyklácie.',
+    sk: 'Obráťte sa na výrobcu alebo dodávateľa s požiadavkou o informácie týkajúce sa obnovenia alebo recyklácie.',
     sl: 'Za podatke glede predelave ali reciklaže se obrnite na proizvajalca ali dobavitelja.',
     sv: 'Rådfråga tillverkare eller leverantör om återvinning eller återanvändning.'
   }

@@ -4,7 +4,7 @@ export default ( {
   code: 'P370+P380+P375[+P378]',
   translations: {
     bg: 'При пожар: евакуирайте зоната. Гасете пожара от разстояние поради опасност от експлозия. [Използвайте…, за да загасите].',
-    cs: 'V případě požáru: Vykliďte prostor. Kvůli nebezpečí výbuchu haste z dostatečné vzdálenosti. [K uhašení použijte …].',
+    cs: 'V případě požáru: Vykliďte prostor. Kvůli nebezpečí výbuchu haste z dostatečné vzdálenosti. [K uhašení použijte …].',
     da: 'Ved brand: Evakuer området. Bekæmp branden på afstand på grund af eksplosionsfare. [Anvend … til brandslukning].',
     de: 'Bei Brand: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen. [… zum Löschen verwenden.]',
     el: 'Σε περίπτωση πυρκαγιάς: Εκκενώστε την περιοχή. Προσπαθήστε να σβήσετε την πυρκαγιά από απόσταση, επειδή υπάρχει κίνδυνος έκρηξης [Χρησιμοποιήστε … για την κατάσβεση].',
@@ -24,7 +24,7 @@ export default ( {
     pl: 'W przypadku pożaru: Ewakuować teren. Z powodu ryzyka wybuchu gasić pożar z odległości. [Użyć … do gaszenia].',
     pt: 'Em caso de incêndio: Evacuar a zona. Combater o incêndio à distância, devido ao risco de explosão. [Para extinguir utilizar…].',
     ro: 'În caz de incendiu: Evacuați zona. Stingeți incendiul de la distanță din cauza pericolului de explozie. [Utilizați … pentru stingere].',
-    sk: 'V prípade požiaru: Priestory evakuujte. Z dôvodu nebezpečenstva výbuchu požiar haste z diaľky. [Na hasenie použite…].',
+    sk: 'V prípade požiaru: Priestory evakuujte. Z dôvodu nebezpečenstva výbuchu požiar haste z diaľky. [Na hasenie použite…].',
     sl: 'Ob požaru: Izprazniti območje. Gasiti z večje razdalje zaradi nevarnosti eksplozije. [Za gašenje uporabiti …].',
     sv: 'Vid brand: Utrym området. Bekämpa branden på avstånd på grund av explosionsrisken. [Släck med …].'
   }

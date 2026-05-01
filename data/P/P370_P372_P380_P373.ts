@@ -4,7 +4,7 @@ export default ( {
   code: 'P370+P372+P380+P373',
   translations: {
     bg: 'При пожар: опасност от експлозия. Евакуирайте зоната. НЕ се опитвайте да гасите пожара, ако огънят наближи експлозиви.',
-    cs: 'V případě požáru: Nebezpečí výbuchu. Vykliďte prostor. Požár NEHASTE, dostane-li se k výbušninám.',
+    cs: 'V případě požáru: Nebezpečí výbuchu. Vykliďte prostor. Požár NEHASTE, dostane-li se k výbušninám.',
     da: 'Ved brand: Eksplosionsfare. Evakuer området. BEKÆMP IKKE branden, hvis denne når eksplosiverne.',
     de: 'Bei Brand: Explosionsgefahr. Umgebung räumen. KEINE Brandbekämpfung, wenn das Feuer explosive Stoffe/Gemische/Erzeugnisse erreicht.',
     el: 'Σε περίπτωση πυρκαγιάς: Κίνδυνος έκρηξης. Εκκενώστε την περιοχή. ΜΗΝ προσπαθείτε να σβήσετε την πυρκαγιά, όταν η φωτιά πλησιάζει σε εκρηκτικά.',
@@ -24,7 +24,7 @@ export default ( {
     pl: 'W przypadku pożaru: Zagrożenie wybuchem. Ewakuować teren. NIE gasić pożaru, jeżeli ogień dosięgnie materiały wybuchowe.',
     pt: 'Em caso de incêndio: Risco de explosão. Evacuar a zona. Se o fogo atingir os explosivos, NÃO tentar combatê-lo.',
     ro: 'În caz de incendiu: Risc de explozie. Evacuați zona. NU încercați să stingeți incendiul atunci când focul a ajuns la explozivi.',
-    sk: 'V prípade požiaru: Riziko výbuchu. Priestory evakuujte. Požiar NEHASTE, ak sa oheň priblížil k výbušninám.',
+    sk: 'V prípade požiaru: Riziko výbuchu. Priestory evakuujte. Požiar NEHASTE, ak sa oheň priblížil k výbušninám.',
     sl: 'Ob požaru: Nevarnost eksplozije. Izprazniti območje. NE gasiti, ko ogenj doseže eksploziv.',
     sv: 'Vid brand: Explosionsrisk. Utrym området. Försök INTE bekämpa branden när den når explosiva varor.'
   }

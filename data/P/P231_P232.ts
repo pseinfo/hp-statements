@@ -24,7 +24,7 @@ export default ( {
     pl: 'Używać i przechowywać zawartość w atmosferze obojętnego gazu /…. Chronić przed wilgocią.',
     pt: 'Manusear e armazenar o conteúdo em atmosfera de gás inerte/…. Manter ao abrigo da humidade.',
     ro: 'A se manipula și a se depozita conținutul sub un gaz inert/…. A se proteja de umiditate.',
-    sk: 'Manipulujte s obsahom a skladujte ho v prostredí s inertným plynom/… Chráňte pred vlhkosťou.',
+    sk: 'Manipulujte s obsahom a skladujte ho v prostredí s inertným plynom/… Chráňte pred vlhkosťou.',
     sl: 'Ravnati z vsebino in jo hraniti v ustreznem inertnem plinu/…. Zaščititi pred vlago.',
     sv: 'Hantera och förvara innehållet under inert gas/…. Skyddas från fukt.'
   }

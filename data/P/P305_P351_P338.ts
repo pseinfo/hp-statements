@@ -4,7 +4,7 @@ export default ( {
   code: 'P305+P351+P338',
   translations: {
     bg: 'ПРИ КОНТАКТ С ОЧИТЕ: промивайте внимателно с вода в продължение на няколко минути. Свалете контактните лещи, ако има такива и доколкото това е възможно. Продължете с изплакването.',
-    cs: 'PŘI ZASAŽENÍ OČÍ: Několik minut opatrně vyplachujte vodou. Vyjměte kontaktní čočky, jsou-li nasazeny a pokud je lze vyjmout snadno. Pokračujte ve vyplachování.',
+    cs: 'PŘI ZASAŽENÍ OČÍ: Několik minut opatrně vyplachujte vodou. Vyjměte kontaktní čočky, jsou-li nasazeny a pokud je lze vyjmout snadno. Pokračujte ve vyplachování.',
     da: 'VED KONTAKT MED ØJNENE: Skyl forsigtigt med vand i flere minutter. Fjern eventuelle kontaktlinser, hvis dette kan gøres let. Fortsæt skylning.',
     de: 'BEI KONTAKT MIT DEN AUGEN: Einige Minuten lang behutsam mit Wasser spülen. Eventuell vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter spülen.',
     el: 'ΣΕ ΠΕΡΙΠΤΩΣΗ ΕΠΑΦΗΣ ΜΕ ΤΑ ΜΑΤΙΑ: Ξεπλύνετε προσεκτικά με νερό για αρκετά λεπτά. Αν υπάρχουν φακοί επαφής, αφαιρέστε τους, αν είναι εύκολο. Συνεχίστε να ξεπλένετε.',
@@ -24,7 +24,7 @@ export default ( {
     pl: 'W PRZYPADKU DOSTANIA SIĘ DO OCZU: Ostrożnie płukać wodą przez kilka minut. Wyjąć soczewki kontaktowe, jeżeli są i można je łatwo usunąć. Nadal płukać.',
     pt: 'SE ENTRAR EM CONTACTO COM OS OLHOS: Enxaguar cuidadosamente com água durante vários minutos. Se usar lentes de contacto, retire-as, se tal lhe for possível. Continue a enxaguar.',
     ro: 'ÎN CAZ DE CONTACT CU OCHII: Clătiți cu atenție cu apă timp de mai multe minute. Scoateți lentilele de contact, dacă este cazul și dacă acest lucru se poate face cu ușurință. Continuați să clătiți.',
-    sk: 'PO ZASIAHNUTÍ OČÍ: Niekoľko minút ich opatrne vyplachujte vodou. Ak používate kontaktné šošovky a je to možné, odstráňte ich. Pokračujte vo vyplachovaní.',
+    sk: 'PO ZASIAHNUTÍ OČÍ: Niekoľko minút ich opatrne vyplachujte vodou. Ak používate kontaktné šošovky a je to možné, odstráňte ich. Pokračujte vo vyplachovaní.',
     sl: 'PRI STIKU Z OČMI: Previdno izpirati z vodo nekaj minut. Odstranite kontaktne leče, če jih imate in če to lahko storite brez težav. Nadaljujte z izpiranjem.',
     sv: 'VID KONTAKT MED ÖGONEN: Skölj försiktigt med vatten i flera minuter. Ta ur eventuella kontaktlinser om det går lätt. Fortsätt att skölja.'
   }

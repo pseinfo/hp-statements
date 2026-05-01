@@ -24,7 +24,7 @@ export default ( {
     pl: 'Używać i przechowywać zawartość w atmosferze obojętnego gazu /…',
     pt: 'Manusear e armazenar o conteúdo em atmosfera de gás inerte/…',
     ro: 'A se manipula și a se depozita conținutul sub un gaz inert/…',
-    sk: 'Manipulujte s obsahom a skladujte ho v prostredí s inertným plynom/…',
+    sk: 'Manipulujte s obsahom a skladujte ho v prostredí s inertným plynom/…',
     sl: 'Ravnati z vsebino in jo hraniti v inertnem plinu/…',
     sv: 'Hantera och förvara innehållet under inert gas/…'
   }

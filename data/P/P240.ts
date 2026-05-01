@@ -24,7 +24,7 @@ export default ( {
     pl: 'Uziemić i połączyć pojemnik i sprzęt odbiorczy.',
     pt: 'Ligação à terra/equipotencial do recipiente e do equipamento recetor.',
     ro: 'Legătură la pământ și conexiune echipotențială cu recipientul și cu echipamentul de recepție.',
-    sk: 'Uzemnite a upevnite nádobu a plniace zariadenie.',
+    sk: 'Uzemnite a upevnite nádobu a plniace zariadenie.',
     sl: 'Ozemljiti posodo in opremo za sprejem tekočine ter izenačiti potenciale.',
     sv: 'Jorda och potentialförbind behållare och mottagarutrustning.'
   }
