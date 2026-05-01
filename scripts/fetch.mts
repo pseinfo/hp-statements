@@ -79,12 +79,16 @@ function tsObjectLiteral ( value: Statements[ string ] ) : string {
   return format( value, 0 );
 }
 
-async function updateStatement ( filePath: string, code: string, data: Statements[ string ] ) : Promise< string > {
+async function saveStatementFile ( filePath: string, code: string, data: Statements[ string ] ) : Promise< string > {
   const content = `import { Statement } from '../../src/types.js';\n\n` +
     `export default ( ${ tsObjectLiteral( data ) } ) as const satisfies Statement;\n`;
 
   await writeFile( filePath, content, 'utf8' );
   return code;
+}
+
+async function saveCodes ( codes: string[] ) : Promise< void > {
+  //
 }
 
 async function processStatements ( statements: Statements ) : Promise< void > {
@@ -103,8 +107,10 @@ async function processStatements ( statements: Statements ) : Promise< void > {
     const filePath = join( dir, `${ code.replace( /\+/g, '_' ) }.ts` );
 
     await mkdir( dir, { recursive: true } );
-    codes.push( await updateStatement( filePath, code, data ) );
+    codes.push( await saveStatementFile( filePath, code, data ) );
   }
+
+  await saveCodes( codes );
 }
 
 ( async () => {
