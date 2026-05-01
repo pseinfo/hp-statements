@@ -1,5 +1,5 @@
-import type { EUHCode, HCode, PCode } from '../data';
-import type { Context, HazardStatements } from './types';
+import type { EUHCode, HCode, PCode, StatementCode } from '../data';
+import type { Context, HazardStatements, Statement } from './types';
 
 type BucketMap = {
   hazard: HCode;
@@ -21,8 +21,9 @@ export class Factory {
   }
 
   private freeze () : void {
-    const sort = < T extends { code: string } > ( arr: T[] ) =>
-      [ ...arr ].sort( ( a, b ) => a.code.localeCompare( b.code ) );
+    const sort = < T extends StatementCode > ( arr: Statement< T >[] ) => [ ...arr ]
+      .map( ( { context, ...rest } ) => context === undefined ? rest : { ...rest, context } )
+      .sort( ( a, b ) => a.code.localeCompare( b.code ) );
 
     this.frozen = true;
     this.map = Object.freeze( {
