@@ -3,9 +3,11 @@
     "target": "ES2020",
     "module": "ESNext",
     "moduleResolution": "bundler",
+    "types": [ "node" ],
+    "rootDir": ".",
+    "outDir": "./dist",
     "esModuleInterop": true,
     "declaration": true,
-    "outDir": "./dist",
     "strict": true,
     "skipLibCheck": true,
     "alwaysStrict": true,
@@ -18,5 +20,5 @@
     "noImplicitThis": true
   },
   "include": [ "src/**/*", "data/**/*" ],
-  "exclude": [ "node_modules", "dist", "scripts" ]
+  "exclude": [ "node_modules", "dist" ]
 }
