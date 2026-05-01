@@ -14,6 +14,12 @@ export type StatementConfig = {
   translations: { [ K in LangCode ]?: string };
 };
 
+export type TranslationMap = {
+  [ T in StatementType ]: {
+    [ K in StatementCode ]: string | undefined;
+  };
+};
+
 export type Context = {
   deprecated?: boolean;
   notes?: string;

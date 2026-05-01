@@ -1,8 +1,6 @@
 import type { StatementCode } from '../data';
-import type { LangCode, StatementConfig, StatementType } from './types';
+import type { LangCode, StatementConfig, StatementType, TranslationMap } from './types';
 import { EUHCode, HCode, PCode } from '../data';
-
-type TranslationMap = { [ K in StatementType ]: Record< string, string > };
 
 export class Translate {
   private static cache = new Map< StatementCode, StatementConfig >();
@@ -41,15 +39,10 @@ export class Translate {
   }
 
   public static async all ( lang: LangCode ) : Promise< TranslationMap > {
-    const out: TranslationMap = { H: {}, P: {}, EUH: {} };
+    const out: TranslationMap = { H: {}, P: {}, EUH: {} } as TranslationMap;
 
     const process = async ( codes: readonly StatementCode[], bucket: StatementType ) => {
-      for ( const code of codes ) {
-        const s = await this.load( code );
-        const t = s?.translations[ lang ] ?? s?.translations[ this.fallback ];
-
-        if ( t ) out[ bucket ][ code ] = t;
-      }
+      for ( const code of codes ) out[ bucket ][ code ] = await this.one( code, lang );
     };
 
     await Promise.all( [
