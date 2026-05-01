@@ -12,11 +12,11 @@ export default ( {
     es: 'Evitar el calentamiento en condiciones de aislamiento o la reducción del agente insensibilizante.',
     et: 'Vältida suletuna kuumutamist ja desensibilisaatori vähenemist.',
     fi: 'Vältettävä kuumentamista suljetussa astiassa tai flegmatointiaineen vähentämistä.',
-    fr: 'Éviter d'échauffer en milieu confiné ou en cas de diminution de la quantité d'agent désensibilisateur.',
+    fr: 'Éviter d\'échauffer en milieu confiné ou en cas de diminution de la quantité d\'agent désensibilisateur.',
     ga: 'Seachain an téamh i limistéar iata nó i gcás laghdú ar an dí-íogróir.',
     hr: 'Izbjegavati zagrijavanje u zatvorenom prostoru ili smanjenje udjela desenzitirajućeg agensa.',
     hu: 'Kerülje a hevítést zárt térben vagy a deszenzibilizáló szer mennyiségének csökkenése esetén.',
-    it: 'Evitare di riscaldare sotto confinamento o di ridurre l'agente desensibilizzante.',
+    it: 'Evitare di riscaldare sotto confinamento o di ridurre l\'agente desensibilizzante.',
     lt: 'Vengti kaitimo uždaroje talpykloje arba desensibilizacijos veiksnio poveikio sumažėjimo.',
     lv: 'Nepieļaut karsēšanu slēgtā vidē vai desensibilizējošā aģenta daudzuma samazināšanos.”',
     mt: 'Evita t-tisħin fil-magħluq jew it-tnaqqis tal-aġenti disensitizzanti.',
@@ -26,6 +26,6 @@ export default ( {
     ro: 'A se evita încălzirea în mediu confinat sau în caz de scădere a agentului de desensibilizare',
     sk: 'Zabráňte zahrievaniu v ohraničenom priestore alebo zníženiu obsahu desenzibilizačného činidla.',
     sl: 'Izogibati se segrevanju v zaprtem prostoru ali zmanjšanju vsebnosti desenzibilizatorja.“.',
-    sv: 'Undvik uppvärmning i sluten behållare eller reducering av det okänsliggörande ämnet."
+    sv: 'Undvik uppvärmning i sluten behållare eller reducering av det okänsliggörande ämnet.'
   }
 } ) as const satisfies StatementConfig;
