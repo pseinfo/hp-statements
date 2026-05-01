@@ -1,5 +1,8 @@
 import type { StatementCode } from '../data';
 import type { LangCode, StatementConfig, StatementType } from './types';
+import { EUHCode, HCode, PCode } from '../data';
+
+type TranslationMap = { [ K in StatementType ]: Record< string, string > };
 
 export class Translate {
   private static cache = new Map< StatementCode, StatementConfig >();
