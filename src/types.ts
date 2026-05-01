@@ -1,3 +1,5 @@
+import type { EUHCode, HCode, PCode, StatementCode } from './codes';
+
 export type LangCode = ( typeof LangCode )[ number ];
 export const LangCode = [
   'bg', 'cs', 'da', 'de', 'el', 'en', 'es', 'et', 'fi', 'fr', 'ga', 'hr',
@@ -12,8 +14,14 @@ export type Statement = {
   translations: { [ K in LangCode ]?: string };
 };
 
+export type CodeEntry< C extends StatementCode = StatementCode > = {
+  code: C;
+  deprecated?: boolean;
+  notes?: string;
+};
+
 export type HazardStatements = {
-  hazard?: string[];
-  precautionary?: string[];
-  eu?: string[];
+  hazard?: CodeEntry< HCode >[];
+  precautionary?: CodeEntry< PCode >[];
+  eu?: CodeEntry< EUHCode >[];
 };
