@@ -2,7 +2,6 @@
   "name": "@pseinfo/hp-statements",
   "description": "GHS hazard and precautionary statements",
   "version": "1.0.0",
-  "type": "module",
   "license": "MIT",
   "author": {
     "name": "Paul Köhler",
@@ -27,6 +26,19 @@
     "README.md",
     "LICENSE"
   ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js",
+      "default": "./dist/src/index.js"
+    },
+    "./data/*": {
+      "types": "./dist/data/*.d.ts",
+      "import": "./dist/data/*.ts",
+      "default": "./dist/data/*.ts"
+    }
+  },
   "scripts": {
     "fetch": "npx tsx scripts/fetch.mts",
     "lint": "tsc --noEmit",
