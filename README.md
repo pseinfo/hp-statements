@@ -1,5 +1,8 @@
 # GHS Hazard & Precautionary Statements
 
+[![npm version](https://img.shields.io/npm/v/@pseinfo/hp-statements?style=flat-square)](https://npmjs.com/@pseinfo/hp-statements)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](https://github.com/pseinfo/hp-statements/blob/master/LICENSE)
+
 Helper package for GHS Hazard (H), Precautionary (P) and EU-related (EUH) statements. This package provides a type-safe way to manage, validate, and translate GHS statements.
 
 Primarily used for the [periodic table database](https://github.com/pseinfo/database) and [pse-info.de](https://pse-info.de).
