@@ -35,8 +35,8 @@
     },
     "./data/*": {
       "types": "./dist/data/*.d.ts",
-      "import": "./dist/data/*.ts",
-      "default": "./dist/data/*.ts"
+      "import": "./dist/data/*.js",
+      "default": "./dist/data/*.js"
     }
   },
   "scripts": {
