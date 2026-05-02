@@ -32,8 +32,9 @@
     "lint": "tsc --noEmit",
     "clean": "shx rm -rf dist",
     "tsc": "tsc --project tsconfig.build.json",
+    "alias": "tsc-alias -p tsconfig.build.json",
     "format": "prettier --write \"dist/**/*\" --ignore-path \"\" --log-level warn",
-    "build": "npm run clean && npm run tsc && npm run format"
+    "build": "npm run clean && npm run tsc && npm run alias && npm run format"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
