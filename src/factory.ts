@@ -1,5 +1,7 @@
-import type { EUHCode, HCode, PCode, StatementCode } from '../data';
 import type { Context, HazardStatements, Statement } from './types';
+
+import type { StatementCode } from '../data';
+import { EUHCode, HCode, PCode } from '../data';
 
 type BucketMap = {
   hazard: HCode;

@@ -1,5 +1,6 @@
-import type { StatementCode } from '../data';
 import type { LangCode, StatementConfig, StatementType, TranslationMap } from './types';
+
+import type { StatementCode } from '../data';
 import { EUHCode, HCode, PCode } from '../data';
 
 export class Translator {
