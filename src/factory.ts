@@ -38,19 +38,19 @@ export class Factory {
     } );
   }
 
-  public H ( code: HCode, context?: Context ) : this {
+  public H < T extends Context > ( code: HCode, context?: T ) : this {
     Assert.assertHCode( code );
     this.bucket( 'hazard' ).push( { code, context } );
     return this;
   }
 
-  public P ( code: PCode, context?: Context ) : this {
+  public P < T extends Context > ( code: PCode, context?: T ) : this {
     Assert.assertPCode( code );
     this.bucket( 'precautionary' ).push( { code, context } );
     return this;
   }
 
-  public EUH ( code: EUHCode, context?: Context ) : this {
+  public EUH < T extends Context > ( code: EUHCode, context?: T ) : this {
     Assert.assertEUHCode( code );
     this.bucket( 'eu' ).push( { code, context } );
     return this;
