@@ -40,7 +40,7 @@
     }
   },
   "scripts": {
-    "fetch": "npx tsx scripts/fetch.mts",
+    "fetch": "shx rm -rf data && npx tsx scripts/fetch.mts",
     "lint": "tsc --noEmit",
     "clean": "shx rm -rf dist",
     "tsc": "tsc --project tsconfig.build.json",
