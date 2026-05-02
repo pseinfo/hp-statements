@@ -23,8 +23,6 @@
     "pseinfo"
   ],
   "files": [
-    "data",
-    "bin",
     "dist",
     "README.md",
     "LICENSE"
