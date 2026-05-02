@@ -20,14 +20,14 @@ export type TranslationMap = {
   };
 };
 
-export type Context = {
-  deprecated?: boolean;
-  notes?: string;
-};
+export type Context = Record< string | number, unknown >;
 
-export type Statement< C extends StatementCode = StatementCode > = {
-  code: C;
-  context?: Context;
+export type Statement<
+  C extends StatementCode = StatementCode,
+  T extends Context = {}
+> = {
+  readonly code: C;
+  context?: T;
 };
 
 export type HazardStatements = {
