@@ -30,11 +30,16 @@
   "scripts": {
     "fetch": "npx tsx scripts/fetch.mts",
     "lint": "tsc --noEmit",
-    "build": "tsc --project tsconfig.build.json"
+    "clean": "shx rm -rf dist",
+    "tsc": "tsc --project tsconfig.build.json",
+    "format": "prettier --write \"dist/**/*\" --ignore-path \"\"",
+    "build": "npm run clean && npm run tsc && npm run format"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
     "json-stable-stringify": "^1.3.0",
+    "prettier": "^3.8.3",
+    "shx": "^0.4.0",
     "typescript": "^6.0.3"
   }
 }
