@@ -1,6 +1,6 @@
+import type { StatementCode } from '../data';
 import type { StatementType } from './types';
 
-import type { StatementCode } from '../data';
 import { EUHCode, HCode, PCode } from '../data';
 
 'use strict';
