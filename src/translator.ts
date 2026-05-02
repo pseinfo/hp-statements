@@ -2,7 +2,7 @@ import type { StatementCode } from '../data';
 import type { LangCode, StatementConfig, StatementType, TranslationMap } from './types';
 import { EUHCode, HCode, PCode } from '../data';
 
-export class Translate {
+export class Translator {
   private static cache = new Map< StatementCode, StatementConfig >();
   private static readonly fallback: LangCode = 'en';
 
