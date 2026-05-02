@@ -1,6 +1,8 @@
 # GHS Hazard & Precautionary Statements
 
-Helper package for GHS Hazard (H), Precautionary (P) and EU-related (EUH) statements. This package provides a type-safe way to manage, validate, and translate GHS statements, primarily used for the [@pseinfo](https://github.com/pseinfo) database and web application.
+Helper package for GHS Hazard (H), Precautionary (P) and EU-related (EUH) statements. This package provides a type-safe way to manage, validate, and translate GHS statements.
+
+Primarily used for the [periodic table database](https://github.com/pseinfo/database) and [pse-info.de](https://pse-info.de).
 
 ## Features
 
