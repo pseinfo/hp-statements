@@ -45,7 +45,7 @@ jobs:
           commit-message: "data: update ghs statements from source"
           committer: chemdroid[bot] <281193672+chemdroid[bot]@users.noreply.github.com>
           author: chemdroid[bot] <281193672+chemdroid[bot]@users.noreply.github.com>
-          branch: automation/fetch-statements
+          branch: automation/ghs-updates
           delete-branch: true
           title: "Data Update: Latest GHS Statements"
           body: |
