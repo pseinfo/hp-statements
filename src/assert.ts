@@ -58,6 +58,7 @@ export class Assert {
       if ( type === 'H' && this.isHCode( value ) ) return value as any;
       if ( type === 'P' && this.isPCode( value ) ) return value as any;
       if ( type === 'EUH' && this.isEUHCode( value ) ) return value as any;
+      else throw new Error( `Invalid ${ prefix }-Code: got "${ value as string }", but prefix "${ prefix }" is not specified` );
     }
 
     throw new Error( `Invalid ${ type }-Code: got "${ value as string }", expected ${ type } statement code` );
