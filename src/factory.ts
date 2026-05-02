@@ -12,7 +12,7 @@ export class Factory {
   private frozen: boolean = false;
 
   private assertMutable () : void | never {
-    if ( this.frozen ) throw new Error( `Hazardous statements are frozen ("build()" already called).` );
+    if ( this.frozen ) throw new Error( `Hazardous statements are frozen!` );
   }
 
   private bucket < K extends keyof BucketMap > ( key: K ) : NonNullable< HazardStatements[ K ] > {
@@ -48,9 +48,13 @@ export class Factory {
     return this;
   }
 
-  public build () : Readonly< HazardStatements > {
+  public toObj () : Readonly< HazardStatements > {
     this.freeze();
     return this.map;
+  }
+
+  public toJson ( space: number = 2 ) : string {
+    return JSON.stringify( this.toObj(), null, space );
   }
 }
 
