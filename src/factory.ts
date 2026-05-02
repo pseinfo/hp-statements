@@ -1,7 +1,10 @@
+import type { EUHCode, HCode, PCode, StatementCode } from '../data';
 import type { Context, HazardStatements, Statement } from './types';
 
-import type { StatementCode } from '../data';
-import { EUHCode, HCode, PCode } from '../data';
+import { Assert } from './assert';
+
+'use strict';
+
 
 type BucketMap = {
   hazard: HCode;
@@ -36,16 +39,19 @@ export class Factory {
   }
 
   public H ( code: HCode, context?: Context ) : this {
+    Assert.assertHCode( code );
     this.bucket( 'hazard' ).push( { code, context } );
     return this;
   }
 
   public P ( code: PCode, context?: Context ) : this {
+    Assert.assertPCode( code );
     this.bucket( 'precautionary' ).push( { code, context } );
     return this;
   }
 
   public EUH ( code: EUHCode, context?: Context ) : this {
+    Assert.assertEUHCode( code );
     this.bucket( 'eu' ).push( { code, context } );
     return this;
   }
