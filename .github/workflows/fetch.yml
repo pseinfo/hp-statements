@@ -34,13 +34,17 @@ jobs:
         run: npm ci
 
       - name: Fetch Latest Data
-        run: npm run fetch
+        run: |
+          git config core.ignorecase false
+          npm run fetch
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ steps.app-token.outputs.token }}
           commit-message: "data: update ghs statements from source"
+          committer: chemdroid[bot] <281193672+chemdroid[bot]@users.noreply.github.com>
+          author: chemdroid[bot] <281193672+chemdroid[bot]@users.noreply.github.com>
           branch: automation/fetch-statements
           delete-branch: true
           title: "Data Update: Latest GHS Statements"
