@@ -29,7 +29,8 @@
   ],
   "scripts": {
     "fetch": "npx tsx scripts/fetch.mts",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "build": "tsc --project tsconfig.build.json"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
