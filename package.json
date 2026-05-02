@@ -32,7 +32,7 @@
     "lint": "tsc --noEmit",
     "clean": "shx rm -rf dist",
     "tsc": "tsc --project tsconfig.build.json",
-    "format": "prettier --write \"dist/**/*\" --ignore-path \"\"",
+    "format": "prettier --write \"dist/**/*\" --ignore-path \"\" --log-level warn",
     "build": "npm run clean && npm run tsc && npm run format"
   },
   "devDependencies": {
