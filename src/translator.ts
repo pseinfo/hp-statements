@@ -1,13 +1,19 @@
+import type { StatementCode } from '../data';
 import type { LangCode, StatementConfig, StatementType, TranslationMap } from './types';
 
-import type { StatementCode } from '../data';
 import { EUHCode, HCode, PCode } from '../data';
+import { Assert } from './assert';
+
+'use strict';
+
 
 export class Translator {
   private static cache = new Map< StatementCode, StatementConfig >();
   private static readonly fallback: LangCode = 'en';
 
   private static code2path ( code: StatementCode ) : string {
+    Assert.assertStatementCode( code );
+
     const prefix = code.match( /^[A-Z]+/ )?.[ 0 ]!;
     const name = code.replace( /\+/g, '_' );
 
