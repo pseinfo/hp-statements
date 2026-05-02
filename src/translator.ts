@@ -17,7 +17,7 @@ export class Translator {
     const prefix = code.match( /^[A-Z]+/ )?.[ 0 ]!;
     const name = code.replace( /\+/g, '_' );
 
-    return `../data/${ prefix }/${ name }.ts`;
+    return `../data/${ prefix }/${ name }.js`;
   }
 
   private static async load ( code: StatementCode ) : Promise< StatementConfig | undefined > {
