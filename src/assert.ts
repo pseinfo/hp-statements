@@ -1,6 +1,10 @@
+import type { StatementType } from './types';
+
 import type { StatementCode } from '../data';
 import { EUHCode, HCode, PCode } from '../data';
-import { StatementType } from './types';
+
+'use strict';
+
 
 const CODES = {
   H: new Set( HCode ), P: new Set( PCode ), EUH: new Set( EUHCode ),
