@@ -1,5 +1,6 @@
 import type { StatementCode } from '../data';
 import { EUHCode, HCode, PCode } from '../data';
+import { StatementType } from './types';
 
 const CODES = {
   H: new Set( HCode ), P: new Set( PCode ), EUH: new Set( EUHCode ),
@@ -46,5 +47,19 @@ export class Assert {
   public static assertStatementCode ( value: unknown ) : StatementCode | never {
     if ( this.isStatementCode( value ) ) return value;
     throw new Error( `Invalid Statement Code: got "${ value as string }", expected valid H/P/EUH statement code` );
+  }
+
+  public static assertCodeType < T extends StatementType > (
+    value: unknown, type: T
+  ) : T extends 'H' ? HCode : T extends 'P' ? PCode : EUHCode {
+    const prefix = this.codePrefix( value );
+
+    if ( prefix === type ) {
+      if ( type === 'H' && this.isHCode( value ) ) return value as any;
+      if ( type === 'P' && this.isPCode( value ) ) return value as any;
+      if ( type === 'EUH' && this.isEUHCode( value ) ) return value as any;
+    }
+
+    throw new Error( `Invalid ${ type }-Code: got "${ value as string }", expected ${ type } statement code` );
   }
 }
