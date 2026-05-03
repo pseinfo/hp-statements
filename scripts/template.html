@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GHS Hazard & Precautionary Statements</title>
     <style>
-      :root { --text: #000; --accent: #3498db; --bg: #fdfdfd; --muted: #6a737d; --border: #e1e4e8; }
+      :root { --text: #333; --accent: #3498db; --bg: #fdfdfd; --muted: #6a737d; --border: #e1e4e8; }
       body { margin: 0; padding: 40px 20px; line-height: 1.5; font-family: sans-serif; color: var( --text ); background: var( --bg ); }
       a { text-decoration: none; color: var( --accent ); }
       a:hover { text-decoration: underline; }
@@ -26,10 +26,10 @@
       h2 { margin-bottom: 18px; font-size: 1.08rem; font-weight: 600; color: var( --muted ); }
 
       table { width: 100%; background: #fff; border-collapse: collapse; border-spacing: 0; }
-      th, td { padding: 10px 14px; text-align: left; border: 1px solid var( --border ); }
+      th, td { padding: 10px 14px; text-align: left; font-size: 0.96rem; border: 1px solid var( --border ); }
       th { text-transform: uppercase; font-size: 0.76rem; font-weight: 700; color: var( --muted ); background: #f6f8fa; }
 
-      .code { width: 120px; white-space: nowrap; font-family: ui-monospace, monospace; font-size: 0.9rem; font-weight: 600; color: var( --accent ); }
+      .code { width: 120px; white-space: nowrap; font-family: ui-monospace, monospace; font-weight: 600; color: var( --accent ); }
       .hidden { display: none; }
 
       footer { margin: 60px 0; padding-top: 30px; text-align: center; font-size: 0.85rem; color: var( --muted ); border-top: 1px solid var( --border ); }
@@ -47,10 +47,10 @@
 
       <div class="controls" id="navbar">
         <input type="text" id="search" placeholder="Filter by code or text …" oninput="filter()">
-        <select id="lang" onchange="updateLang()">{{LANGS}}</select>
+        <select id="lang" onchange="language()">{{LANGS}}</select>
       </div>
 
-      <section id="sec-h">
+      <section id="H">
         <h2>Hazard Statements (H)</h2>
         <table>
           <thead><tr><th>Code</th><th>Statement</th></tr></thead>
@@ -58,7 +58,7 @@
         </table>
       </section>
 
-      <section id="sec-p">
+      <section id="P">
         <h2>Precautionary Statements (P)</h2>
         <table>
           <thead><tr><th>Code</th><th>Statement</th></tr></thead>
@@ -66,7 +66,7 @@
         </table>
       </section>
 
-      <section id="sec-euh">
+      <section id="EUH">
         <h2>EU Hazard Statements (EUH)</h2>
         <table>
           <thead><tr><th>Code</th><th>Statement</th></tr></thead>
@@ -86,30 +86,64 @@
 
     <script type="application/json" id="data">{{DATA}}</script>
     <script>
-      function updateLang () {
-        const lang = document.getElementById( 'lang' ).value;
+      const DATA = JSON.parse( document.getElementById( 'data' ).textContent );
+      let currentLang = 'en';
 
-        document.querySelectorAll( '.phrase' ).forEach( tr => {
-          const translations = JSON.parse( tr.dataset.translations );
-          tr.querySelector( '.translation' ).textContent = translations[ lang ] || '—';
-        } );
+      const sections = {
+        H: document.querySelector( '#H tbody' ),
+        P: document.querySelector( '#P tbody' ),
+        EUH: document.querySelector( '#EUH tbody' )
+      };
 
+      function render ( lang ) {
+        const langData = DATA[ lang ];
+        if ( ! langData ) return;
+
+        for ( const key in sections ) sections[ key ].innerHTML = '';
+        for ( const type of [ 'H', 'P', 'EUH' ] ) {
+          const entries = langData[ type ];
+
+          for ( const code in entries ) {
+            const text = entries[ code ];
+
+            const tr = document.createElement( 'tr' );
+            tr.dataset.code = code.toLowerCase();
+            tr.dataset.text = text.toLowerCase();
+            tr.innerHTML = `<td class="code">${ code }</td><td>${ text }</td>`;
+
+            sections[ type ].appendChild( tr );
+          }
+        }
+      }
+
+      function language () {
+        const select = document.getElementById( 'lang' );
+        currentLang = select.value;
+
+        render( currentLang );
         filter();
       }
 
       function filter () {
-        const q = document.getElementById( 'search' ).value.toLowerCase();
+        const query = document.getElementById( 'search' ).value.toLowerCase();
 
-        document.querySelectorAll( '.phrase' ).forEach( tr => {
-          const text = tr.textContent.toLowerCase();
-          tr.classList.toggle( 'hidden', ! text.includes( q ) );
-        } );
+        for ( const tbody of Object.values( sections ) ) {
+          for ( const row of tbody.rows ) {
+            const match =
+              row.dataset.code.includes( query ) ||
+              row.dataset.text.includes( query );
 
-        document.querySelectorAll( 'section' ).forEach( sec => {
-          const visible = sec.querySelectorAll( 'tbody tr:not(.hidden)' ).length > 0;
-          sec.classList.toggle( 'hidden', ! visible );
-        } );
+            row.classList.toggle( 'hidden', ! match );
+          }
+        }
       }
+
+      document.addEventListener( 'DOMContentLoaded', () => {
+        if ( ! DATA[ currentLang ] ) currentLang = Object.keys( DATA )[ 0 ];
+        document.getElementById( 'lang' ).value = currentLang;
+
+        render( currentLang );
+      } );
     </script>
   </body>
 </html>
