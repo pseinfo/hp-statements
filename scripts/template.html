@@ -6,12 +6,11 @@
     <title>GHS Hazard & Precautionary Statements</title>
     <style>
       :root {
-        --primary: #2c3e50;
+        --text: #000;
         --accent: #3498db;
         --bg: #fdfdfd;
-        --text: #2c3e50;
-        --border: #e1e4e8;
         --muted: #6a737d;
+        --border: #e1e4e8;
       }
 
       body {
@@ -67,9 +66,8 @@
         padding: 8px 12px;
         font-size: 0.9rem;
         background: #fff;
-        border: 1px solid var(--border);
+        border: 1px solid var( --border );
         border-radius: 6px;
-        outline: none;
       }
 
       input {
@@ -82,8 +80,38 @@
       }
 
       input:focus, select:focus {
-        border-color: var( --accent );
-        box-shadow: 0 0 0 3px rgba( 52 152 219 / 0.1 );
+        outline: 2px solid var( --accent );
+      }
+
+      section {
+        margin-bottom: 50px;
+      }
+
+      h2 {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      table {
+        width: 100%;
+        background: #fff;
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      th, td {
+        padding: 10px 14px;
+        text-align: left;
+        border: 1px solid var( --border );
+      }
+
+      th {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var( --muted );
+        background: var( --bg );
       }
     </style>
   </head>
@@ -96,8 +124,32 @@
 
       <div class="controls" id="navbar">
         <input type="text" id="search" placeholder="Filter by code or text …" oninput="filter()">
-        <select id="lang" onchange="updateLang()">{LANGS}</select>
+        <select id="lang" onchange="updateLang()">{{LANGS}}</select>
       </div>
+
+      <section id="sec-h">
+        <h2>Hazard Statements (H)</h2>
+        <table>
+          <thead><tr><th>Code</th><th>Statement</th></tr></thead>
+          <tbody>{{H_CODES}}</tbody>
+        </table>
+      </section>
+
+      <section id="sec-p">
+        <h2>Precautionary Statements (P)</h2>
+        <table>
+          <thead><tr><th>Code</th><th>Statement</th></tr></thead>
+          <tbody>{{P_CODES}}</tbody>
+        </table>
+      </section>
+
+      <section id="sec-euh">
+        <h2>EU Hazard Statements (EUH)</h2>
+        <table>
+          <thead><tr><th>Code</th><th>Statement</th></tr></thead>
+          <tbody>{{EUH_CODES}}</tbody>
+        </table>
+      </section>
     </div>
   </body>
 </html>
