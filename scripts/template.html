@@ -197,5 +197,38 @@
         <p>Generated on {{DATE}}</p>
       </footer>
     </div>
+
+    <script>
+      function updateLang () {
+        const lang = document.getElementById( 'lang' ).value;
+
+        document.querySelectorAll( '.phrase' ).forEach( tr => {
+          const translations = JSON.parse( tr.dataset.translations );
+          tr.querySelector( '.translation' ).textContent = translations[ lang ] || '—';
+        } );
+
+        filter();
+      }
+
+      function filter () {
+        const q = document.getElementById( 'search' ).value.toLowerCase();
+
+        document.querySelectorAll( '.phrase' ).forEach( tr => {
+          const text = tr.textContent.toLowerCase();
+          tr.classList.toggle( 'hidden', ! text.includes( q ) );
+        } );
+
+        document.querySelectorAll( 'section' ).forEach( sec => {
+          const visible = sec.querySelectorAll( 'tbody tr:not(.hidden)' ).length > 0;
+          sec.classList.toggle( 'hidden', ! visible );
+        } );
+      }
+
+      window.onscroll = function () {
+        const nav = document.getElementById( 'navbar' );
+        if ( window.pageYOffset > 150 ) nav.classList.add( 'sticky' );
+        else nav.classList.remove( 'sticky' );
+      };
+    </script>
   </body>
 </html>
