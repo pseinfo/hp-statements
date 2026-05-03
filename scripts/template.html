@@ -5,35 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GHS Hazard & Precautionary Statements</title>
     <style>
-      :root { --text: #333; --accent: #3498db; --bg: #fdfdfd; --muted: #6a737d; --border: #e1e4e8; }
-      body { margin: 0; padding: 40px 20px; line-height: 1.5; font-family: sans-serif; color: var( --text ); background: var( --bg ); }
-      a { text-decoration: none; color: var( --accent ); }
-      a:hover { text-decoration: underline; }
+      :root { --text: #333; --accent: #3498db; --bg: #fdfdfd; --muted: #6a737d; --border: #e1e4e8 }
+      body { margin: 0; padding: 40px 20px; line-height: 1.5; font-family: sans-serif; color: var( --text ); background: var( --bg ) }
+      a { text-decoration: none; color: var( --accent ) }
+      a:hover { text-decoration: underline }
 
-      .container { margin: 0 auto; max-width: 900px; }
+      .container { margin: 0 auto; max-width: 900px }
 
-      header { padding-bottom: 20px; border-bottom: 1px solid var( --border ); }
-      h1 { margin: 0 0 12px; line-height: 1.2; font-size: 1.75rem; font-weight: 600; }
-      p.subtitle { margin: 0; font-size: 1rem; color: var( --muted ); }
+      header { padding-bottom: 30px }
+      h1 { margin: 0 0 12px; line-height: 1.2; font-size: 1.75rem; font-weight: 600 }
+      p.subtitle { margin: 0; font-size: 1rem; color: var( --muted ) }
 
-      .controls { position: sticky; top: 0; z-index: 10; display: flex; gap: 15px; margin-bottom: 30px; padding: 20px 0; background: var( --bg ); border-bottom: 1px solid var( --border ); }
-      input, select { padding: 12px 16px; font-size: 0.92rem; background: #fff; border: 1px solid var( --border ); border-radius: 6px; }
-      input:focus, select:focus { outline: 2px solid var( --accent ); }
-      input { flex: 1; }
-      select { min-width: 80px; cursor: pointer; }
+      .controls { position: sticky; top: 0; z-index: 10; display: flex; gap: 15px; margin-bottom: 30px; padding: 20px 0; background: var( --bg ); border-bottom: 1px solid var( --border ) }
+      input, select { padding: 12px 16px; font-size: 0.92rem; background: #fff; border: 1px solid var( --border ); border-radius: 6px }
+      input:focus, select:focus { outline: 2px solid var( --accent ) }
+      input { flex: 1 }
+      select { min-width: 80px; cursor: pointer }
 
-      section { margin-bottom: 50px; }
-      h2 { margin-bottom: 18px; font-size: 1.08rem; font-weight: 600; color: var( --muted ); }
+      section { margin-bottom: 50px }
+      h2 { margin-bottom: 18px; font-size: 1.08rem; font-weight: 600; color: var( --muted ) }
 
-      table { width: 100%; background: #fff; border-collapse: collapse; border-spacing: 0; }
-      th, td { padding: 10px 14px; text-align: left; font-size: 0.96rem; border: 1px solid var( --border ); }
-      th { text-transform: uppercase; font-size: 0.76rem; font-weight: 700; color: var( --muted ); background: #f6f8fa; }
+      table { width: 100%; background: #fff; border-collapse: collapse; border-spacing: 0 }
+      th, td { padding: 10px 14px; text-align: left; font-size: 0.96rem; border: 1px solid var( --border ) }
+      th { text-transform: uppercase; font-size: 0.76rem; font-weight: 700; color: var( --muted ); background: #f6f8fa }
 
-      .code { width: 120px; white-space: nowrap; font-family: ui-monospace, monospace; font-weight: 600; color: var( --accent ); }
-      .hidden { display: none; }
+      #empty { margin-top: 50px; text-align: center; color: var( --muted ) }
+      #empty h2 { margin-top: 0; font-size: 1.3rem }
 
-      footer { margin: 60px 0; padding-top: 30px; text-align: center; font-size: 0.85rem; color: var( --muted ); border-top: 1px solid var( --border ); }
-      footer p { margin: 0; }
+      .code { width: 120px; white-space: nowrap; font-family: ui-monospace, monospace; font-weight: 600; color: var( --accent ) }
+      .hidden { display: none }
+
+      footer { margin: 60px 0; padding-top: 30px; text-align: center; font-size: 0.85rem; color: var( --muted ); border-top: 1px solid var( --border ) }
+      footer p { margin: 0 }
     </style>
   </head>
   <body>
@@ -72,6 +75,11 @@
           <thead><tr><th>Code</th><th>Statement</th></tr></thead>
           <tbody></tbody>
         </table>
+      </section>
+
+      <section id="empty">
+        <h2>No matches found</h2>
+        <p>Try adjusting your search query or selecting a different language.</p>
       </section>
 
       <footer>
@@ -135,6 +143,7 @@
 
       function filter () {
         const query = document.getElementById( 'search' ).value.toLowerCase();
+        let anyVisible = false;
 
         for ( const { parent, table } of Object.values( sections ) ) {
           let visible = 0;
@@ -146,7 +155,10 @@
           }
 
           parent.classList.toggle( 'hidden', visible === 0 );
+          anyVisible ||= visible > 0;
         }
+
+        document.getElementById( 'empty' ).classList.toggle( 'hidden', anyVisible );
       }
 
       document.addEventListener( 'DOMContentLoaded', () => {
@@ -154,6 +166,7 @@
         document.getElementById( 'lang' ).value = currentLang;
 
         render( currentLang );
+        filter();
       } );
     </script>
   </body>
