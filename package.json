@@ -43,8 +43,10 @@
     "fetch": "shx rm -rf data && npx tsx scripts/fetch.mts",
     "lint": "tsc --noEmit",
     "tsc": "tsc --project tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+    "types": "tsc --project tsconfig.declaration.json && tsc-alias -p tsconfig.declaration.json",
     "format": "prettier --write \"dist/**/*\" --ignore-path \"\" --log-level warn",
-    "build": "shx rm -rf dist && npm run tsc && npm run format"
+    "build": "shx rm -rf dist && npm run tsc && npm run types && npm run format",
+    "docs": "shx rm -rf dist/docs && npx tsx scripts/docs.mts"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",

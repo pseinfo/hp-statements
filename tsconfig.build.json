@@ -2,7 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "rootDir": ".",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "removeComments": true,
+    "declaration": false
   },
   "tsc-alias": {
     "resolveFullPaths": true,

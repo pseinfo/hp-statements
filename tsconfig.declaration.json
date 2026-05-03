@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./dist/types",
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "removeComments": false
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true,
+    "verbose": false
+  },
+  "include": [ "src/**/*.ts" ]
+}
