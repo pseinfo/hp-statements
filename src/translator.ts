@@ -26,8 +26,9 @@ export class Translator {
 
     const prefix = code.match( /^[A-Z]+/ )?.[ 0 ]!;
     const name = code.replace( /\+/g, '_' );
+    const stem = /[a-z]/.test( name ) ? name + '_' : name;
 
-    return `../data/${ prefix }/${ name }.js`;
+    return `../data/code/${ prefix }/${ stem }.js`;
   }
 
   /**
