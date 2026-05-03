@@ -7,7 +7,7 @@ Helper package for GHS Hazard (H), Precautionary (P) and EU-related (EUH) statem
 
 Primarily used for the [periodic table database](https://github.com/pseinfo/database) and [pse-info.de](https://pse-info.de).
 
-View a searchable list of all statements and translations on [pseinfo.github.io/hp-statements](https://pseinfo.github.io/hp-statements).
+Visit [pseinfo.github.io/hp-statements](https://pseinfo.github.io/hp-statements) to get a searchable list of all statements and translations.
 
 ## Features
 
