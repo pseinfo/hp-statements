@@ -46,6 +46,45 @@
         font-size: 1rem;
         color: var( --muted );
       }
+
+      .controls {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+        padding: 10px 0;
+        background: var( --bg );
+        border-bottom: 1px solid transparent;
+      }
+
+      .controls.sticky {
+        border-bottom-color: var( --border );
+      }
+
+      input, select {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        outline: none;
+      }
+
+      input {
+        flex: 1;
+      }
+
+      select {
+        min-width: 80px;
+        cursor: pointer;
+      }
+
+      input:focus, select:focus {
+        border-color: var( --accent );
+        box-shadow: 0 0 0 3px rgba( 52 152 219 / 0.1 );
+      }
     </style>
   </head>
   <body>
@@ -54,6 +93,11 @@
         <h1>GHS Hazard & Precautionary Statements</h1>
         <p class="subtitle">Complete catalog of phrases declared within the <code>@pseinfo/hp-statements</code> library.</p>
       </header>
+
+      <div class="controls" id="navbar">
+        <input type="text" id="search" placeholder="Filter by code or text …" oninput="filter()">
+        <select id="lang" onchange="updateLang()">{LANGS}</select>
+      </div>
     </div>
   </body>
 </html>
