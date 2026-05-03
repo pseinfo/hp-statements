@@ -90,16 +90,25 @@
       let currentLang = 'en';
 
       const sections = {
-        H: document.querySelector( '#H tbody' ),
-        P: document.querySelector( '#P tbody' ),
-        EUH: document.querySelector( '#EUH tbody' )
+        H: {
+          parent: document.querySelector( '#H' ),
+          table: document.querySelector( '#H tbody' )
+        },
+        P: {
+          parent: document.querySelector( '#P' ),
+          table: document.querySelector( '#P tbody' )
+        },
+        EUH: {
+          parent: document.querySelector( '#EUH' ),
+          table: document.querySelector( '#EUH tbody' )
+        }
       };
 
       function render ( lang ) {
         const langData = DATA[ lang ];
         if ( ! langData ) return;
 
-        for ( const key in sections ) sections[ key ].innerHTML = '';
+        for ( const key in sections ) sections[ key ].table.innerHTML = '';
         for ( const type of [ 'H', 'P', 'EUH' ] ) {
           const entries = langData[ type ];
 
@@ -111,7 +120,7 @@
             tr.dataset.text = text.toLowerCase();
             tr.innerHTML = `<td class="code">${ code }</td><td>${ text }</td>`;
 
-            sections[ type ].appendChild( tr );
+            sections[ type ].table.appendChild( tr );
           }
         }
       }
@@ -127,14 +136,16 @@
       function filter () {
         const query = document.getElementById( 'search' ).value.toLowerCase();
 
-        for ( const tbody of Object.values( sections ) ) {
-          for ( const row of tbody.rows ) {
-            const match =
-              row.dataset.code.includes( query ) ||
-              row.dataset.text.includes( query );
+        for ( const { parent, table } of Object.values( sections ) ) {
+          let visible = 0;
 
+          for ( const row of table.rows ) {
+            const match = row.dataset.code.includes( query ) || row.dataset.text.includes( query );
             row.classList.toggle( 'hidden', ! match );
+            visible += match;
           }
+
+          parent.classList.toggle( 'hidden', visible === 0 );
         }
       }
 
