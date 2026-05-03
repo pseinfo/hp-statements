@@ -5,13 +5,17 @@ on:
     types: [ published ]
 
 permissions:
-  id-token: write
   contents: read
+  id-token: write
+  pages: write
 
 jobs:
   publish:
     name: Publish
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout Repository
@@ -31,3 +35,18 @@ jobs:
 
       - name: Publish Package to npm
         run: npm publish
+
+      - name: Generate Docs
+        run: npm run docs
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
