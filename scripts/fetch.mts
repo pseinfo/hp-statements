@@ -61,22 +61,51 @@ function statement2Str ( s: StatementConfig ) : string {
     .replace( /'([a-zA-Z_$][a-zA-Z0-9_$]*)':/g, '$1:' );
 }
 
+function codeName ( code: string ) : string {
+  const name = code.replace( /\+/g, '_' );
+  return /[a-z]/.test( name ) ? name + '_' : name;
+}
+
 async function processStatements ( map: StatementMap ) : Promise< void > {
   console.log( `Processing statements ...` );
 
   for ( const [ prefix, list ] of Object.entries( map ) ) {
-    const dir = join( process.cwd(), 'data', prefix );
+    const dir = join( process.cwd(), 'data/code', prefix );
     await mkdir( dir, { recursive: true } );
 
     for ( const [ code, s ] of Object.entries( list ) ) {
-      const file = join( dir, `${ code.replace( /\+/g, '_' ) }.ts` );
-      let out = '';
+      const file = join( dir, `${ codeName( code ) }.ts` );
 
-      out += `import type { StatementConfig } from '../../src/types';\n\n`;
+      let out = '';
+      out += `import type { StatementConfig } from '../../../src/types';\n\n`;
       out += `export default ( ${ statement2Str( s ) } ) as const satisfies StatementConfig;\n`;
 
       await writeFile( file, out, 'utf8' );
     }
+  }
+}
+
+// ---- JSON ----
+
+async function saveJson ( map: StatementMap ) : Promise< void > {
+  console.log( `Saving JSON files ...` );
+
+  const langDir = join( process.cwd(), 'data/lang' );
+  await mkdir( langDir, { recursive: true } );
+
+  for ( const lang of LangCode ) {
+    const out: any = { H: {}, P: {}, EUH: {} };
+
+    for ( const [ prefix, list ] of Object.entries( map ) ) {
+      for ( const [ code, s ] of Object.entries( list ) ) {
+        if ( s.translations[ lang ] ) {
+          out[ prefix ][ code ] = s.translations[ lang ];
+        }
+      }
+    }
+
+    const file = join( langDir, `${ lang }.json` );
+    await writeFile( file, JSON.stringify( out, null, 2 ) + '\n', 'utf8' );
   }
 }
 
@@ -126,6 +155,7 @@ async function generateCodes ( map: StatementMap ) : Promise< void > {
   try {
     const map = await fetchStatements()
     await processStatements( map );
+    await saveJson( map );
     await generateCodes( map );
   }
   catch ( err ) { console.error( err ) }
