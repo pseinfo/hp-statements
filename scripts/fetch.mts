@@ -11,6 +11,7 @@ const REPO_URL = 'https://raw.githubusercontent.com/mhchem/hpstatements/master/c
 
 type StatementList = Record< string, StatementConfig >;
 type StatementMap = { [ P in StatementType ]?: StatementList };
+type LangMap = { [ P in StatementType ]?: Record< string, string > };
 
 interface RawStatement {
   code: string;
@@ -94,15 +95,12 @@ async function saveJson ( map: StatementMap ) : Promise< void > {
   await mkdir( langDir, { recursive: true } );
 
   for ( const lang of LangCode ) {
-    const out: any = { H: {}, P: {}, EUH: {} };
+    const out: LangMap = {};
 
-    for ( const [ prefix, list ] of Object.entries( map ) ) {
-      for ( const [ code, s ] of Object.entries( list ) ) {
-        if ( s.translations[ lang ] ) {
-          out[ prefix ][ code ] = s.translations[ lang ];
-        }
-      }
-    }
+    for ( const [ prefix, list ] of Object.entries( map ) as [ StatementType, StatementList ][] )
+      for ( const [ code, s ] of Object.entries( list ) )
+        if ( s.translations[ lang ] )
+          ( out[ prefix ] ??= {} )[ code ] = s.translations[ lang ];
 
     const file = join( langDir, `${ lang }.json` );
     await writeFile( file, JSON.stringify( out, null, 2 ) + '\n', 'utf8' );
