@@ -31,7 +31,7 @@ Build a collection of statements:
 import { HP } from '@pseinfo/hp-statements';
 
 const statements = HP()
-  .H( 'H200' ).EUH( 'EUH001' )
+  .H( 'H200' ).EUH( 'EUH031' )
   .P( 'P101', { note: 'Substance is only hazardous when ...' } )
   .toObj();
 ```
@@ -63,6 +63,19 @@ import { Assert } from '@pseinfo/hp-statements';
 Assert.isHCode( 'H200' ); // true
 Assert.assertHCode( 'invalid' ); // Throws Error
 ```
+
+### Codes
+
+Access codes directly from `data` directory:
+
+```typescript
+import H201 from '@pseinfo/hp-statements/data/code/H/H201';
+
+const text = H201.translations.en; // Explosive; mass explosion hazard.
+const code = H201.code; // 'H201'
+```
+
+Also, the `data/lang` directory includes JSON files with all statements for each language.
 
 ## Source
 
