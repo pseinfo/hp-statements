@@ -54,7 +54,7 @@
         <h2>Hazard Statements (H)</h2>
         <table>
           <thead><tr><th>Code</th><th>Statement</th></tr></thead>
-          <tbody>{{H_CODES}}</tbody>
+          <tbody></tbody>
         </table>
       </section>
 
@@ -62,7 +62,7 @@
         <h2>Precautionary Statements (P)</h2>
         <table>
           <thead><tr><th>Code</th><th>Statement</th></tr></thead>
-          <tbody>{{P_CODES}}</tbody>
+          <tbody></tbody>
         </table>
       </section>
 
@@ -70,7 +70,7 @@
         <h2>EU Hazard Statements (EUH)</h2>
         <table>
           <thead><tr><th>Code</th><th>Statement</th></tr></thead>
-          <tbody>{{EUH_CODES}}</tbody>
+          <tbody></tbody>
         </table>
       </section>
 
@@ -84,6 +84,7 @@
       </footer>
     </div>
 
+    <script type="application/json" id="data">{{DATA}}</script>
     <script>
       function updateLang () {
         const lang = document.getElementById( 'lang' ).value;
