@@ -50,7 +50,7 @@
     "docs": "shx rm -rf dist/docs && npx tsx scripts/docs.mts"
   },
   "devDependencies": {
-    "@types/node": "^25.6.0",
+    "@types/node": "^26.0.1",
     "json-stable-stringify": "^1.3.0",
     "prettier": "^3.8.3",
     "shx": "^0.4.0",
